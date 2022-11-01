@@ -1,0 +1,14 @@
+name: santamarcelinaods
+title: santamarcelinaods
+username:
+account: santamarcelina
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7248680
+bundleId: 6457480
+url: https://santamarcelina.shinyapps.io/santamarcelinaods/
+when: 1667179745.09534
+lastSyncTime: 1667179745.09535
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: index.htm

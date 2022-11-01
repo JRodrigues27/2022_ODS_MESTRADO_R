@@ -1,0 +1,206 @@
+---
+params:
+  acoes: ""
+  bd_pavs: ""
+  bd_pavs_agravos: ""
+output: 
+  pdf_document:
+  toc: true
+  toc_depth: 2
+  
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(pander)
+library(ggalluvial)
+
+
+#FUNÇÃO PARA FORÇAR ESCALA COM APENAS NÚMEROS INTEIROS NOS GRAFICOS
+integer_breaks <- function(n = 5, ...) {
+  fxn <- function(x) {
+    breaks <- floor(pretty(x, n, ...))
+    names(breaks) <- attr(breaks, "labels")
+    breaks
+  }
+  return(fxn)
+}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+![](logo.png)
+RELATÓRIO ODS PAVS `r params$acoes`
+`r format(Sys.time(), '%d/%m/%y')`
+---
+
+## RELATÓRIO ODS PAVS `r params$acoes`
+
+```{r data, include = FALSE}
+bd_pavs <- params$bd_pavs
+
+bd_agravos <-  params$bd_pavs_agravos
+
+cores_ods <- c("01 ERRADICAÇÃO DA POBREZA" = "#E5243B",
+               "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL" = "#DDA63A",
+               "03 SAÚDE E BEM ESTAR" = "#4C9F38",
+               "04 EDUCAÇÃO DE QUALIDADE" = "#C5192D",
+               "05 IGUALDADE DE GÊNERO" = "#FF3A21",
+               "06 ÁGUA POTÁVEL E SANEAMENTO" = "#26BDE2",
+               "07 ENERGIA LIMPA E ACESSÍVEL" = "#FCC30B",
+               "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO" = "#A21942",
+               "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA" = "#FD6925",
+               "10 REDUÇÃO DAS DESIGUALDADES" = "#DD1367",
+               "11 CIDADES E COMUNIDADES SUSTENTÁVEIS" = "#FD9D24",
+               "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS" = "#BF8B2E",
+               "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA" = "#3F7E44",
+               "15 VIDA TERRESTRE" = "#56C02B",
+               "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES" = "#00689D",
+               "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" = "#19486A")
+```
+
+**ATENÇÃO:** Evite impressões desnecessárias. Se for mesmo preciso imprimir esse documento, prefira a opção em formato livreto, frente e verso ou rascunho. Menos é mais.
+
+Esse relatório é composto segundo as informações registradas no *Monitoramento PAVS* pelo Agente de Promoção Ambiental da **`r params$acoes`** no período:
+
+## Nesse período foram realizadas:
+
+| Tipo de intervenção | quantidade |
+|:--------------------|:----------:|
+| Ações comunitárias  |            |
+
+## Resíduos destinados adequadamente no período:
+
+| Resíduo \| quantidade
+
+## Quantidade de atividades que cada categoria profissional participou em ações PAVS juntamente com APA e/ou Gestor Local do Programa:
+
+```{r ods-pavs, fig.width = 7, fig.height = 3, echo=FALSE}
+bd_pavs %>% 
+  group_by(`ODS - NOME`, `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`) %>% 
+  count() %>% 
+  arrange(desc(n)) %>% 
+  ggplot(aes(axis1 = `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`, axis2 = `ODS - NOME`, y = n, fill = `ODS - NOME`)) +
+  scale_fill_manual(values = cores_ods,
+                    limits = force) +
+    geom_alluvium(aes(fill = `ODS - NOME`)) +
+  geom_stratum(color = 'white', size = 1) +
+  labs(title = stringr::str_wrap(params$acoes, 50),
+       subtitle = "ODS relacionadas",
+       caption = "Fonte: Agenda 2030 municipal") +
+  scale_size(guide = 'none') +
+  annotate("text", 
+           x = 1, 
+           y = 8,
+           size = 2,
+           label = stringr::str_wrap(params$acoes, 40),
+           color = "white",
+           fontface = "bold",
+           angle = 90) +
+ # geom_text(stat = "stratum",
+  #          aes(label = after_stat(stratum))) +
+  scale_x_discrete(limits = c("ODS - NOME", "SITUAÇÕES"),
+                   expand = c(0.15, 0.05)) +
+  theme_void() +
+  theme(
+   # legend.text=element_text(size=10),
+    plot.title = element_text(hjust = 0.5, size = 10),    # Center title position and size
+    plot.subtitle = element_text(hjust = 0.5, size = 9),            # Center subtitle
+    plot.caption = element_text(hjust = 0, size = 8, face = "italic"),# move caption to the left
+  )
+```
+
+## Temas abordados nas atividades educativas PAVS:
+
+```{r plot pavs-agravos,fig.width = 10, fig.height = 5, echo=FALSE }
+bd_agravos %>% 
+  arrange(desc(`Risco ambiental`)) %>% 
+  ggplot(aes(x=`Doencas/ Agravos`, 
+             y=`Risco ambiental`*100, 
+             color= CATEGORIAS,
+             size=`Risco ambiental`*100)) +
+  geom_point(data = bd_agravos,
+             alpha=0.5) +
+  scale_size(range = c(.1, 24), 
+             name="Fração Ambiental Atribuída", 
+             guide = "none") + # esconde a legenda de tamanhos
+  scale_color_brewer(palette = "Set1",
+                     type = "qual",
+                     labels = ~ stringr::str_wrap(.x, width = 20),
+                     guide = guide_legend(override.aes = list(size = 8))
+                     ) +
+  scale_x_discrete(labels = function(`Doencas/ Agravos`) str_wrap(`Doencas/ Agravos`, 20)) + 
+  ylim(0,120) +
+  ylab("Fração ambiental atribuída (%)") +
+  xlab("Agravos/Doenças") +
+  # geom_text(data = bd_agravos,
+  #           aes(x = `Doencas/ Agravos`,
+  #               y = `Risco ambiental`*100, 
+  #               label = stringr::str_wrap(`Doencas/ Agravos`, 20)),
+  #           color = "black",
+  #           size = 4,
+  #           position = position_nudge(x = 0, y = 10)
+  # )+
+  labs(title = stringr::str_wrap(params$acoes, 50),
+       subtitle = "agravos, doenças e fração ambiental atribuída",
+       caption = "Fonte: WHO, 2016") +
+  theme_classic()+
+  geom_segment( aes(x =`Doencas/ Agravos`, 
+                    xend =`Doencas/ Agravos`, 
+                    y = 0, 
+                    yend = `Risco ambiental`*100), size = 0.5) +
+  theme(
+    legend.text=element_text(size=10),
+    plot.title = element_text(hjust = 0.5, size = 14),    # Center title position and size
+    plot.subtitle = element_text(hjust = 0.5),            # Center subtitle
+    plot.caption = element_text(hjust = 0, face = "italic"),# move caption to the left
+    axis.text.x = element_text(angle = 45, 
+                               vjust = 1, 
+                               hjust= 1)#,
+        #axis.ticks = element_blank()
+    )
+```
+
+## Projetos em andamento na Unidade:
+
+```{r tabela agravos, echo=FALSE }
+bd_agravos %>%
+  arrange(desc(`Risco ambiental`)) %>% 
+  transmute(
+    Categorias = CATEGORIAS,
+    `Agravos/Doenças` = `Doencas/ Agravos`,
+    `Fração ambiental atribuída (FAA)` = paste0(`Risco ambiental` * 100, "%"),
+    `Método para estabelecimento da FAA` = Metodo
+  ) %>% 
+  pander::pander(split.table = Inf, 
+                 style = "rmarkdown", 
+                 caption = "FONTE: WHO, 2016")
+```
+
+## Projetos em andamento na Unidade:
+
+```{r tabela acoes, echo=FALSE }
+bd_agravos %>% 
+      transmute(
+        `Agravos/Doenças` = `Doencas/ Agravos`,
+        `Eixos PAVS` = `EIXO PAVS`,
+        `Ações para enfrentamento sugeridas` = `Ações para enfrentamento sugeridas`      ) %>% 
+  pander::pander(split.table = Inf, 
+                 style = "rmarkdown", 
+                 caption = "FONTE: WHO, 2016")
+```
+
+## Práticas incorporadas em andamento na Unidade:
+
+```{r tabela indicadores, echo=FALSE }
+bd_pavs %>% 
+      transmute(`ODS - NOME` = `ODS - NOME`,
+                `Meta ODS Municipal - DESCRICAO` = `Meta ODS Municipal - DESCRICAO`,
+                Indicador = INDICADOR, 
+                Fonte = FONTE.y) %>% 
+  pander::pander(split.table = Inf, 
+                 style = "rmarkdown", 
+                 caption = "FONTE: WHO, 2016")
+```
