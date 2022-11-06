@@ -12,9 +12,9 @@ library(highcharter) #https://rpubs.com/techanswers88/sankey
 
 #IMPORTA A ABA PAVS:
 bd.pavs <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
-                               sheet = "PAVS", col_types = c("text", 
-                                                                            "text", "text", "text", "text", "text", 
-                                                                            "text", "text", "text", "text", "text"))
+                      sheet = "PAVS", col_types = c("text", 
+                                                    "text", "text", "text", "text", "text", 
+                                                    "text", "text", "text", "text", "text"))
 
 
 #IMPORTA A ABA PLANO_SAUDE_2022_25:
@@ -46,13 +46,13 @@ bd.metas.ind <- read_excel("2022_MESTRADO_ODS_BD.xlsx",
 bd.acoes <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                        sheet = "PAVS_ACOES", 
                        col_types = c("text", "text", "text")) %>% 
-  cSplit("Doencas/ Agravos", ",", "long", type.convert= FALSE) %>% 
+  cSplit("Doencas/ Agravos", ";", "long", type.convert= FALSE) %>% 
   drop_na(`Doencas/ Agravos`)
 
 #IMPORTA A ABA DOENCAS_AGRAVOS:
 bd.agravos <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                          sheet = "DOENCAS_AGRAVOS", 
-                         col_types = c("text", "text", "numeric", "text", "text"))
+                         col_types = c("text", "text", "numeric", "text", "text", "text", "text"))
 
 #UNINDO OS BANCO DE DADOS DE PAVS_ACOES E AGRAVOS
 bd.acoes.agravos <- merge(bd.acoes, bd.agravos, all = TRUE) %>% 
@@ -111,9 +111,9 @@ correlacoes_ods_pavs <- bd.ods.merge %>%
   )
 
 bd.ods.etapa <- bd.ods.merge %>% 
-    mutate(`ESTRATEGIA-ETAPA` = if_else(is.na(`ESTRATEGIA-ETAPA`), 
-                 REFERENCIA,
-                 `ESTRATEGIA-ETAPA`, missing = NULL)) %>% 
+  mutate(`ESTRATEGIA-ETAPA` = if_else(is.na(`ESTRATEGIA-ETAPA`), 
+                                      REFERENCIA,
+                                      `ESTRATEGIA-ETAPA`, missing = NULL)) %>% 
   select(`ODS - NOME`,
          `OBJETIVO - OMS`,
          REFERENCIA,
@@ -140,13 +140,13 @@ loadingLogo <- function(href, src, loadingsrc, height = NULL, width = NULL, alt 
                img(src=loadingsrc,height = height, width = width, alt = alt)),
            div(class = 'notbusy',
                img(src = src, height = 39, width = 300, alt = 30))
-           #img(src = src, height = height, width = width, alt = alt))
+           
     )
   )
 }
 
 ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE",
-                    skin = "blue",
+                    skin = "green",
                     header = dashboardHeader(
                       title = loadingLogo('https://aps.santamarcelina.org/saude-e-meio-ambiente/',
                                           'logo_mestrado.png',
@@ -175,7 +175,15 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                   sort(unique(bd.ods.merge$REFERENCIA)),selected = "Programa Selo Socioambiental Santa Marcelina"),
                       uiOutput("acoes"),
                       width = 450,
-                      tags$head(tags$style(HTML(".selectize-input {height: 50px; width: 400px; font-size: 14px;}"))), #ajusta o tamanho das caixas de seleção
+                      tags$head(tags$style(HTML(".selectize-input {height: 50px; width: 400px; font-size: 14px;}",
+                                                '
+         #sidebar {
+            background-color: #dec4de;
+        }
+
+        body, label, input, button, select { 
+          font-family: "Arial";
+        }'))), #ajusta o tamanho das caixas de seleção
                       tags$style(type="text/css", "#relatorio_unidade {background-color:white;color: black;font-family: Courier New}"),
                       hr(style = "border-top: 2px solid white;",
                          h4(textOutput("titulo_pavs_download")),
@@ -194,7 +202,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                           tabPanel("ODS - Estratégias e ações",
                                    fluidRow(
                                      box(title = "CORRELAÇÕES ODS ESTRATÉGIAS INSTITUCIONAIS",
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          highchartOutput("correlacoes_institucionais",height="500px"),
@@ -202,7 +210,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                          collapsible = TRUE
                                      ),
                                      box(title = textOutput("titulo_estrategias_ods"),
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          DTOutput('etapa.ods'),
@@ -210,7 +218,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                          collapsible = TRUE    
                                      ),
                                      box(title = textOutput("titulo_correlacoes"),
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          highchartOutput("correlacoes_estrategias",height="500px"),
@@ -223,7 +231,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                           tabPanel("ODS - Objetivos e Indicadores",
                                    fluidRow(
                                      box(title = textOutput("titulo_metas"),
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          DTOutput('detalhamento'),
@@ -231,7 +239,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                          collapsible = TRUE
                                      ),
                                      box(title = textOutput("titulo_indicadores"),
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          DTOutput('indicadores'),
@@ -244,7 +252,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                           tabPanel("PAVS - Ações e Indicadores",
                                    fluidRow(
                                      box(title = textOutput("titulo_pavs_ods"),
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          DTOutput('pavs.ods'),
@@ -252,27 +260,27 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                          collapsible = TRUE    
                                      ),
                                      box(title = textOutput("titulo_acoes"),
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          highchartOutput("correlacoes_pavs",height="500px"), collapsible = TRUE
                                      ),
                                      box(title = textOutput("titulo_acoes_ods"),
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          DTOutput('tabela.indicadores'),
                                          style = "height:500px; overflow-y: scroll;overflow-x: scroll;",
                                          collapsible = TRUE    
                                      ),
-                                     box(title = "Fração atribuída aos riscos ambientais",
-                                         status = "primary",
+                                     box(title = "Fração atribuível aos riscos ambientais - FAA",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          plotly::plotlyOutput("grafico.agravos"),collapsible = TRUE    
                                      ),
                                      box(title = "Ações sugeridas",
-                                         status = "primary",
+                                         status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
                                          DTOutput('tabela.agravos'),
@@ -329,11 +337,11 @@ server <- function(input, output) {
                           line = list(width = 2, color = '#FFFFFF')), 
             hoverinfo = 'text',
             text = ~paste('<b>AGRAVO:</b>', `Doencas/ Agravos`, '<br>',
-                          '<br>Fração ambiental atribuída:', `Risco ambiental`*100,'%',
+                          '<br>Fração atribuível aos riscos ambientais - FAA:', `Risco ambiental`*100,'%',
                           '<br>Método utilizado:', Metodo)) %>% 
       layout(annotations=list(
         list(text=paste0(unique(corr_pavs()$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`), 
-                         '<br>(doenças ou agravos relacionados e fração ambiental atribuída)'),
+                         '<br>(doenças ou agravos relacionados e fração atribuível aos riscos ambientais)'),
              xref="paper",x=0.5,
              yref="paper",y=1,yshift=30,showarrow=FALSE, 
              font=list(size=15,color='rgb(0,0,0)')),
@@ -357,7 +365,7 @@ server <- function(input, output) {
     text_correlacoes <- input$estrategias
     paste("ODS relacionadas a estratégia", text_correlacoes)
   }) 
-   
+  
   output$titulo_correlacoes <- renderText({
     text_correlacoes <- input$estrategias
     paste("CORRELAÇÕES ODS - AÇÕES ", text_correlacoes)
@@ -378,7 +386,7 @@ server <- function(input, output) {
     paste(text_pavs, " - ODS")
   }) 
   
-   output$titulo_acoes <- renderText({
+  output$titulo_acoes <- renderText({
     text_acoes <- unique(corr_pavs()$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)
     paste(text_acoes, " - ODS: correlações")
   })
@@ -388,7 +396,7 @@ server <- function(input, output) {
     paste("Indicadores ODS possivelmente associados com ", text_acoes)
   })
   
- 
+  
   output$correlacoes_institucionais <- renderHighchart({
     highchart() %>%
       hc_add_series(data = data_to_sankey(correlacoes_ods_inst), type = "sankey", 
@@ -603,10 +611,12 @@ server <- function(input, output) {
   output$tabela.agravos <- renderDT(
     pavs_agravos() %>% 
       transmute(
-        CATEGORIAS = CATEGORIAS,
-        `AGRAVOS/DOENÇAS` = `Doencas/ Agravos`,
-        `FRAÇÃO AMBIENTAL ATRIBUÍDA` = paste0(`Risco ambiental` * 100, "%"),
-        `EIXO PAVS` = `EIXO PAVS`,
+        `Agravos/Doenças` = `Doencas/ Agravos`,
+        Categorias = CATEGORIAS,
+        `Eixo PAVS` = `EIXO PAVS`,
+        `Importância epidemiológica` = `Importância epidemiológica`,
+        `Fração atribuível aos riscos ambientais - FAA` = paste0(`Risco ambiental` * 100, "%"),
+        `Exposições associadas` = `Exposições associadas`,
         `Ações para enfrentamento sugeridas` = `Ações para enfrentamento sugeridas`,
         `Método para estabelecimento da FAA` = Metodo
       ), 

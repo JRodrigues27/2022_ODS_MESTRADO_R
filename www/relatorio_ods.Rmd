@@ -5,10 +5,15 @@ params:
   bd_pavs_agravos: ""
 output: 
   pdf_document:
-  toc: true
+    latex_engine: xelatex
+    toc: false
   toc_depth: 2
-  
+urlcolor: blue
+bibliography: bibliografia.bib
+csl: vancouver.csl
+
 ---
+
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -30,13 +35,15 @@ integer_breaks <- function(n = 5, ...) {
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+![](logo_mestrado.png)
 ---
-![](logo.png)
-RELATÓRIO ODS PAVS `r params$acoes`
+# RELATÓRIO SAÚDE AMBIENTAL - 0DS `r params$acoes`
+
 `r format(Sys.time(), '%d/%m/%y')`
 ---
 
-## RELATÓRIO ODS PAVS `r params$acoes`
+## RELATÓRIO ODS PAVS `r params$acoes`^[**ATENÇÃO:** Evite impressões desnecessárias. Se for mesmo preciso imprimir esse documento, prefira a opção em formato livreto, frente e verso ou rascunho. Menos é mais.]
 
 ```{r data, include = FALSE}
 bd_pavs <- params$bd_pavs
@@ -61,9 +68,10 @@ cores_ods <- c("01 ERRADICAÇÃO DA POBREZA" = "#E5243B",
                "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" = "#19486A")
 ```
 
-**ATENÇÃO:** Evite impressões desnecessárias. Se for mesmo preciso imprimir esse documento, prefira a opção em formato livreto, frente e verso ou rascunho. Menos é mais.
+ @Corvalan2016, [@Andrade2020, @Palmierei2022]
 
-Esse relatório é composto segundo as informações registradas no *Monitoramento PAVS* pelo Agente de Promoção Ambiental da **`r params$acoes`** no período:
+Este relatório é uma versão imprimível de **`r params$acoes`**, extraído do painel de correlação entre as estratégias de saúde ambiental da atenção primária do município de São Paulo e os Objetivos do Desenvolvimento Sustentável. A integra do painel pode ser acessado on-line clicando no link Painel Interativo Saúde Ambiental - ODS Santa Marcelina ^[https://jrodrigues.shinyapps.io/saudeods/]. 
+Neste relatório estáo relacionadas as ações `r params$acoes` que é uma das possibilidades de intervenções que as equipes da Unidades Básicas de Saúde realizam através do Programa Ambientes Verdes e Saudáveis (PAVS). de Essas ações são possibilidade de linhas de atuação do Programa Ambientes Verdes e Saudáveiscomposto segundo as informações registradas no *Monitoramento PAVS* pelo Agente de Promoção Ambiental da  no período:
 
 ## Nesse período foram realizadas:
 
@@ -124,7 +132,7 @@ bd_agravos %>%
   geom_point(data = bd_agravos,
              alpha=0.5) +
   scale_size(range = c(.1, 24), 
-             name="Fração Ambiental Atribuída", 
+             name="Fração atribuível aos riscos ambientais - FAA", 
              guide = "none") + # esconde a legenda de tamanhos
   scale_color_brewer(palette = "Set1",
                      type = "qual",
@@ -133,7 +141,7 @@ bd_agravos %>%
                      ) +
   scale_x_discrete(labels = function(`Doencas/ Agravos`) str_wrap(`Doencas/ Agravos`, 20)) + 
   ylim(0,120) +
-  ylab("Fração ambiental atribuída (%)") +
+  ylab("Fração atribuível aos riscos ambientais - FAA (%)") +
   xlab("Agravos/Doenças") +
   # geom_text(data = bd_agravos,
   #           aes(x = `Doencas/ Agravos`,
@@ -144,7 +152,7 @@ bd_agravos %>%
   #           position = position_nudge(x = 0, y = 10)
   # )+
   labs(title = stringr::str_wrap(params$acoes, 50),
-       subtitle = "agravos, doenças e fração ambiental atribuída",
+       subtitle = "agravos, doenças e fração atribuível aos riscos ambientais - FAA",
        caption = "Fonte: WHO, 2016") +
   theme_classic()+
   geom_segment( aes(x =`Doencas/ Agravos`, 
@@ -171,7 +179,7 @@ bd_agravos %>%
   transmute(
     Categorias = CATEGORIAS,
     `Agravos/Doenças` = `Doencas/ Agravos`,
-    `Fração ambiental atribuída (FAA)` = paste0(`Risco ambiental` * 100, "%"),
+    `Fração atribuível aos riscos ambientais - FAA` = paste0(`Risco ambiental` * 100, "%"),
     `Método para estabelecimento da FAA` = Metodo
   ) %>% 
   pander::pander(split.table = Inf, 
@@ -204,3 +212,5 @@ bd_pavs %>%
                  style = "rmarkdown", 
                  caption = "FONTE: WHO, 2016")
 ```
+
+## REFERÊNCIAS

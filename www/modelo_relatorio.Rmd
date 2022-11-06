@@ -1,0 +1,192 @@
+---
+title: "Modelo de Relatório"
+output: html_document
+---
+
+```{r, echo=FALSE, include=FALSE}
+setwd("D:\\ESALQ\\2016\\Aulas Graduacao\\Estatistica Experimental\\aula01")
+x <- scan("aula01.txt")
+```
+
+
+Apresenta-se a seguir a análise referente aos dados peso de colmos de cana-de-açúcar (g). 
+
+# Análise Exploratória dos Dados
+Observando-se as estatísticas apresentadas na Tabela 1, tem-se que um colmo de cana-de-açúcar pesa, em média, `r round(mean(x),2)`g, com variância `r round(var(x),2)`$^2$ e erro padrão da média `r round(sd(x)/sqrt(length(x)),2)`g. O coeficiente de variação associado aos valores observados é relativamente baixo para dados de campo (considerando-se os valores de referência apresentados por Pimentel-Gomes), sendo este igual a `r round(100*sd(x)/mean(x),2)`\%.
+
+Tabela 1. Média, variância, erro padrão da média e coeficiente de variação referentes aos dados de peso de colmos de cana-de-açúcar
+
+
+|$\bar{x}$   | $s^2$ |	$s/ \sqrt{n}$ |	CV\%|
+|------------|-------|---------------|------|
+|`r mean(x)` |`r var(x)`| `r sd(x)/sqrt(length(x))`|`r 100*sd(x)/mean(x)` |
+
+
+Outras estatísticas foram obtidas, conforme apresentado na Tabela 2, sendo o menor peso observado igual a `r round(min(x),2)`g e o maior peso observado igual a `r round(max(x),2)`g, resultado em uma amplitude total de `r round(max(x)-min(x),2)`g. Também foram calculados os quartis, a partir dos quais observa-se que cinquenta por cento dos valores centrais (dados ordenados entre o primeiro e terceiro quartis) encontram-se entre `r round(quantile(x,0.25),2)`g e `r round(quantile(x,0.75),2)`g, resultando em uma amplitude interquartílica igual a `r round(IQR(x),2)`g. Observa-se, ainda, que metade dos colmos de cana-de-açúcar pesaram `r round(quantile(x),2)`g ou menos.
+
+Tabela 2. Menor valor observado, primeiro quartil, mediana, terceiro quartil e maior valor observado referentes aos dados de peso de colmos de cana-de-açúcar
+
+|mínimo|	Q1|	Mediana|	Q3	|máximo|
+|------|----|--------|------|------|
+|`r round(min(x),2)`| `r round(quantile(x,0.25),2)` | `r round(quantile(x,0.5),2)` | `r round(quantile(x,0.75),2)` | `r round(max(x),2)`
+
+Na Figura 1 são apresentados o gráfico de caixas (boxplot) e o histograma para a variável peso de colmos de cana-de-açúcar, a partir dos quais pode-se observar uma aparente simetria em sua distribuição e ausência de possíveis observações atípicas.
+ 
+```{r, echo=FALSE}
+par(mfrow=c(1,2))
+boxplot(x, ylab="Peso (g) de colmos de cana-de-açúcar")
+hist(x, xlab="Peso (g) de colmos de cana-de-açúcar",
+     ylab="Frequência")
+```
+
+Figura 1.  Gráfico de caixa (esquerda) e histograma (direita) para a variável peso (g) de colmos de cana-de-açúcar
+
+# Inferência Estatística
+São apresentados, a seguir, os intervalos de confiança para a média populacional com níveis de 95 e 99% de confiança, respectivamente:
+
+IC(µ)95%: (`r round(t.test(x)$conf.int[1],2)`, `r round(t.test(x)$conf.int[2],2)`)g    e    IC(µ)99%: (`r round(t.test(x, conf.level=0.99)$conf.int[1],2)`, `r round(t.test(x, conf.level=0.99)$conf.int[2],2)`)g.
+
+Desse modo, pode-se dizer, com 95% de confiança, que o peso médio dos colmos do talhão de onde foi extraída a amostra (peso médio populacional), encontra-se entre `r round(t.test(x)$conf.int[1],2)` e `r round(t.test(x)$conf.int[2],2)`g. Ainda, com 99% de confiança, tem-se que o peso médio populacional encontra-se entre `r round(t.test(x, conf.level=0.99)$conf.int[1],2)` e `r round(t.test(x, conf.level=0.99)$conf.int[2],2)`g.
+
+# "Saída" dos atributos computacionais essenciais para compor a análise
+## Software R
+```{r, echo=TRUE}
+x <- scan("aula01.txt")
+mean(x); var(x); sd(x)
+sd(x)/sqrt(30)
+100*sd(x)/mean(x)
+quantile(x)
+quantile(x,0.75)-quantile(x,0.25)
+min(x); max(x)
+max(x)-min(x)
+hist(x)
+boxplot(x)
+t.test(x,conf.level=0.95)
+t.test(x,conf.level=0.99)
+```
+##  Software SAS
+The SAS System
+
+The UNIVARIATE Procedure
+Variable: peso
+Moments
+N	30	Sum Weights	30
+Mean	15.8833333	Sum Observations	476.5
+Std Deviation	2.14862961	Variance	4.6166092
+Skewness	0.30544475	Kurtosis	0.07640871
+Uncorrected SS	7702.29	Corrected SS	133.881667
+Coeff Variation	13.5275736	Std Error Mean	0.3922843
+
+Basic Statistical Measures
+Location	Variability
+Mean	15.88333	Std Deviation	2.14863
+Median	15.60000	Variance	4.61661
+Mode	15.20000	Range	9.50000
+ 	 	Interquartile Range	3.10000
+
+Tests for Location: Mu0=0
+Test	Statistic	p Value
+Student's t	t	40.48934	Pr > |t|	<.0001
+Sign	M	15	Pr >= |M|	<.0001
+Signed Rank	S	232.5	Pr >= |S|	<.0001
+
+Tests for Normality
+Test	Statistic	p Value
+Shapiro-Wilk	W	0.987379	Pr < W	0.9705
+Kolmogorov-Smirnov	D	0.100665	Pr > D	>0.1500
+Cramer-von Mises	W-Sq	0.040875	Pr > W-Sq	>0.2500
+Anderson-Darling	A-Sq	0.214228	Pr > A-Sq	>0.2500
+
+Quantiles (Definition 5)
+Quantile	Estimate
+100% Max	21.00
+99%	21.00
+95%	19.60
+90%	18.75
+75% Q3	17.60
+50% Median	15.60
+25% Q1	14.50
+10%	13.40
+5%	12.40
+1%	11.50
+0% Min	11.50
+
+Extreme Observations
+Lowest	Highest
+Value	Obs	Value	Obs
+11.5	1	18.1	21
+12.4	5	18.7	2
+13.1	16	18.8	25
+13.7	30	19.6	20
+13.8	24	21.0	6
+
+                         Stem Leaf                     #             Boxplot                       
+                           21 0                        1                |                          
+                           20                                           |                          
+                           19 6                        1                |                          
+                           18 0178                     4                |                          
+                           17 66                       2             +-----+                       
+                           16 02489                    5             |     |                       
+                           15 01222577                 8             *--+--*                       
+                           14 1457                     4             +-----+                       
+                           13 178                      3                |                          
+                           12 4                        1                |                          
+                           11 5                        1                |                          
+                              ----+----+----+----+                                                 
+                                                                                                   
+                                                                                                   
+                                          Normal Probability Plot                                  
+                       21.5+                                             *   ++                    
+                           |                                             ++++                      
+                           |                                        +*+++                          
+                           |                                  **+*+*                               
+                           |                               +**+                                    
+                       16.5+                          +*****                                       
+                           |                    *******                                            
+                           |                ****+                                                  
+                           |           *+*+*+                                                      
+                           |       ++*++                                                           
+                       11.5+   ++*+                                                                
+                            +----+----+----+----+----+----+----+----+----+----+                    
+                                -2        -1         0        +1        +2                         
+                                                                                                   
+                                                                                                   
+
+
+________________________________________
+The SAS System
+
+The UNIVARIATE Procedure
+ 
+
+The SAS System
+
+The MEANS Procedure
+Analysis Variable : peso 
+Mean	Variance	Std Dev	Std Error	Lower 95%
+CL for Mean	Upper 95%
+CL for Mean
+15.8833333	4.6166092	2.1486296	0.3922843	15.0810219	16.6856448
+
+
+The SAS System
+
+The MEANS Procedure
+Analysis Variable : peso 
+Mean	Variance	Std Dev	Std Error	Lower 99%
+CL for Mean	Upper 99%
+CL for Mean
+15.8833333	4.6166092	2.1486296	0.3922843	14.8020464	16.9646203
+
+
+# Referências Bibliográficas
+
+MONTGOMERY, D.C. 2001. Design and analysis of experiments. 5a ed. John Wiley and Sons, N.Y., 684p.
+
+PIMENTEL-GOMES, F. Curso de Estatística Experimental, 14ª. Edição, Piracicaba, SP, 2000. 477p.
+
+R Core Team (2014). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL  http://www.R-project.org/.
+
+STATISTICAL ANALYSIS SYSTEM - SAS. SAS user's guide: statistics. Version 9.3ed. Cary: SAS Institute, 2011.
+
+VIEIRA, S. & HOFFMANN, R. Estatística Experimental. 2ª. Ed. Atlas, São Paulo, 1999. 185p.

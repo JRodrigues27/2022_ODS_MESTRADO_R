@@ -1,0 +1,14 @@
+name: saudeods
+title: saudeods
+username:
+account: jrodrigues
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7490559
+bundleId: 6469205
+url: https://jrodrigues.shinyapps.io/saudeods/
+when: 1667428192.38162
+lastSyncTime: 1667428192.38167
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: ~$2022_logos_mestrado.pptx|~$2022_MESTRADO_ODS_BD.xlsx|2022_logos_mestrado.pptx|index.htm

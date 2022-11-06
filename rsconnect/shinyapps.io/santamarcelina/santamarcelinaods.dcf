@@ -5,10 +5,10 @@ account: santamarcelina
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7248680
-bundleId: 6457480
+bundleId: 6465367
 url: https://santamarcelina.shinyapps.io/santamarcelinaods/
-when: 1667179745.09534
-lastSyncTime: 1667179745.09535
+when: 1667354026.72401
+lastSyncTime: 1667354026.72406
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: index.htm
+ignoredFiles: ~$2022_logos_mestrado.pptx|~$2022_MESTRADO_ODS_BD.xlsx|2022_logos_mestrado.pptx|index.htm
