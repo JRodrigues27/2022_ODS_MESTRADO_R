@@ -95,6 +95,15 @@ cores_ods <- c("01 ERRADICAÇÃO DA POBREZA" = "#E5243B",
                "15 VIDA TERRESTRE" = "#56C02B",
                "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES" = "#00689D",
                "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" = "#19486A")
+
+cores_eixos <- c("A3P (Agenda Ambiental na Administração Pública)" = "deeppink",
+"Água Ar e Solo" = "deepskyblue", 
+"Biodiversidade e Arborização" = "green", 
+"Cultura e Comunicação" = "orange",
+"Gerenciamento de Resíduos Sólidos" = "gray", 
+"Horta e Alimentação Saudável" = "aquamarine", 
+"Revitalização de Espaços Públicos" = "chocolate"
+)
 ```
 ```{r associacao ods-pavs, fig.width = 7, fig.height = 3, echo=FALSE}
 bd_pavs %>% 
@@ -141,13 +150,13 @@ Antes de  seguir no esforço em estabelecer esta relação, vale antes apresenta
 
 \endgroup
 
-OS ODS representam o esforço em materializar a Agenda 2030. Em 2015 os 193 países membros da Organização das Nações Unidas (ONU), incluíndo o Brasil, na Cúpula das Nações Unidadas Sobre o Desenvolvimento Sustentável, elaboraram uma Agenda de compromissos para "acabar com a pobreza, proteger o meio ambiente e o clima e garantir que as pessoas, em todos os lugares, possam desfrutar de paz e de prosperidade"[@agendabr2030; @onu2030]. Conhecida como Agenda 2030, é composta por 17 Objetivos integrados, os ODS, com 169 metas a serem trabalhadas e monitoradas até 2030. No Brasil foi instituída uma comissão Nacional para os ODS em 2016 e em 2018 o Instituto de Pesquisas Avançadas (IPEA) juntamente com o Instituto Brasileiro de Geografia e Estatística (IBGE) foram responsávei por consolidar a adaptação para o contexto e conjuntura nacional.  Em 2018 o MSP, voluntariamente, aderiu à Agenda 2030, ratificando o compromisso por meio da lei municipal nº 16.817. Desde então foi iniciado o processo gradual de associação entre as políticas públicas municipais e os ODS [@Andrade2020 p 03].
+OS ODS são a materialização da Agenda 2030. Em 2015 os 193 países membros da Organização das Nações Unidas (ONU), incluíndo o Brasil, na Cúpula das Nações Unidadas Sobre o Desenvolvimento Sustentável, elaboraram uma Agenda de compromissos para "acabar com a pobreza, proteger o meio ambiente e o clima e garantir que as pessoas, em todos os lugares, possam desfrutar de paz e de prosperidade"[@agendabr2030; @onu2030]. Conhecida como Agenda 2030, é composta por 17 Objetivos integrados, os ODS, com 169 metas a serem trabalhadas e monitoradas até 2030. No Brasil foi instituída uma comissão Nacional para os ODS em 2016 e em 2018 o Instituto de Pesquisas Avançadas (IPEA) juntamente com o Instituto Brasileiro de Geografia e Estatística (IBGE) foram responsáveis por consolidar a adaptação para o contexto e conjuntura nacional.  Em 2018 o MSP, voluntariamente, aderiu à Agenda 2030, ratificando o compromisso por meio da lei municipal nº 16.817. Desde então foi iniciado o processo gradual de associação entre as políticas públicas municipais e os ODS [@Andrade2020 p 03].
 
-Este registro é um excerto de uma matriz mais ampliada que envolve outras ações PAVS e ainda outras estratégias de intervenções ligadas à saúde ambiental na Atenção Primária do MSP e os ODS. O resultado total e interativo dessa matriz pode ser acessado on-line clicando em https://santamarcelina.shinyapps.io/santamarcelinaods/, ou digitando este endereço em seu navegador preferido. 
+Este registro é um excerto de uma matriz mais ampliada que envolve outras ações do PAVS e ainda outras estratégias de intervenções ligadas à saúde ambiental na Atenção Primária do MSP e os ODS. O resultado total e interativo dessa matriz pode ser acessado on-line clicando em https://santamarcelina.shinyapps.io/santamarcelinaods/, ou digitando este endereço em seu navegador preferido. 
 
 O link dá acesso ao *Painel Interativo Saúde Ambiental - ODS Santa Marcelina*, onde foram compiladas as estratégias de atuação de saúde ambiental do MSP no escopo das seguintes diretrizes:
 
-* Programa Ambientes Verdes e Saudáveis (PAVS)^[A SMS de São Paulo disponibiliza muito material sobre o PAVS. para conhecer mais, acesse: https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/atencao_basica/pavs/index.php?p=215712]
+* Programa Ambientes Verdes e Saudáveis (PAVS)^[A SMS de São Paulo disponibiliza muito material sobre o PAVS. Para conhecer mais, acesse: https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/atencao_basica/pavs/index.php?p=215712]
 * As ações do Plano Municipal de Saúde (PMS) de São Paulo 2022 - 2025 @Palmierei2022 que envolvem o PAVS 
 * As ações de educação permanente relacionadas à saúde ambiental ou ao  PAVS registras no Plano Municipal de Educação Permanente (PLAMEP) 2022 - 2025 pela Coordenadoria Regional de Saúde (CRS) Leste, Supervisões Técnicas de Saúde (STS), Unidades de Vigilância em Saúde (UVIS), Conselho Gestores locais e Organizações Sociais de Saúde parceiras (OSS) atuantes nesta CRS.
 
@@ -166,6 +175,7 @@ diferentes territórios e regiões do Município. Deve ser um processo de criaç
 
 Das diretrizes ou programa citados acima, apenas o PMS já tem estabelecida as relações entre sua metas e os ODS. O objetivo das ferramentas aqui apresentadas, *Relatório PAVS - ODS* e *Painel Interativo Saúde Ambiental - ODS Santa Marcelina*, é auxiliar os Gestores técnicos do PAVS, Agentes de Promoção Ambiental e outros profissionais das UBS que incorporam o PAVS como uma de suas estratégia de prevenção de doenças e promoção da Saúde a visualizarem de maneira mais prática as possíveis associações entre as atividades realizadas no âmbito desse Programa e as metas e indicadores dos ODS da Agenda 2030 municipal @Andrade2020. Sendo possível dessa maneira incorporar ao projeto ou ação atividades que colaborem para o alcance dessas metas, utilizando os indicadores sugeridos como refêrencia ou ainda adaptando estes segundo a realidade local dos territórios em que atuam e com os usuários com quem interagem.
 
+\newpage
 Este relatório pode contribuir também como leitura auxiliar ao Relatório Diagnóstico PAVS @DiagnosticoPAVS2020, pois relaciona as doenças e agravos associados à exposições à situações ambientais adversa e sugere linhas de ação, conforme as evidências  científicas compiladas no *Preventing disease through healthy environments : a global assessment of the burden of disease from environmental risks* @Corvalan2016.
 
 Cabe ainda ressaltar que o presente relatório não tem a intenção de ser um manual, mas uma sistematização de indicadores para as metas dos ODS segundo sugeridos pela Agenda 2030 do MSP @Andrade2020, estratégias do PAVS @PAVS2012 e intervenções sugeridas pela OMS @Corvalan2016 que, somados ao olhar critico e perspicaz das equipes das UBS  sobre seus territórios e técnicos de referência para o PAVS, tem o potencial de  engendrar ações efetivas e mensuráveis de saúde coletiva e individuais para colaborar com a melhoria da qualidade de vida da população atendida.
@@ -173,9 +183,10 @@ Cabe ainda ressaltar que o presente relatório não tem a intenção de ser um m
 
 ### 02. ODS possivelmente associadas em `r params$acoes`
 
-Os ODS estruturados pela ONU foram elaborados para que os esforços dos governos e sociedades fossem mensuráveis e possivel de ser monitorados para avaliar o quanto, enquanto sociedade, estamos progredindo para a redução das iniquidades sociais e redução dos impactos ambientais. O setor saúde, como uma das atividades humanas, também é passivel de contribuiur neste sentido. A Organização Mundial da Saúde (OMS) avalia que o Objetivo "03 SAÚDE E BEM ESTAR" é o  está mais diretamente relacionado ao setor, no entanto, não somente. Segundo a organização, dada a complexidade do setor, todos os outros ODS têm alguma relação.[@Corvalan2016 p 94-100] Neste sentido e utilizando sua matriz, a equipe do setor Saúde e Meio Ambiente do Santa Marcelina Saúde ^[A equipe do setor Saúde e Meio Ambiente Santa Marcelina que participou dessa construção é composta por: Almir, dos S. A.; André L. T. U. F.; Carla C. C.; Danilo R. P.; Gabriel R. S. F.; Gisele B. C.; Marlene R. N.; Jefferson dos S. R.; Marcelo C. M.; Paulo R. P. P.; Paulo J. B. V.; Raphael H. M.; Samantha C. H.; Samara S. M.], se reuniu em oficinas para avaliar quais Objetivos, Metas e Indicadores estabelecidos pela Comissão ODS do MSP @Andrade2020 poderiam estar relacionados às ações realizadas pelas equipes das UBS no âmbito do PAVS. Para `r params$acoes` foram relacionados dessa maneira `r soma_acoes` indicadores selecionados, distribuidos entre os ODS: `r escreve_lista`.
+Os ODS estruturados pela ONU foram elaborados para que os esforços dos governos e sociedades fossem mensuráveis e possivel de ser monitorados para avaliar o quanto, enquanto sociedade, estamos progredindo para a redução das iniquidades sociais e redução dos impactos ambientais. O setor saúde, como uma das atividades humanas, também é passivel de contribuiur neste sentido. A Organização Mundial da Saúde (OMS) avalia que o Objetivo "03 SAÚDE E BEM ESTAR" é o  está mais diretamente relacionado ao setor, no entanto, não somente. Segundo a organização, dada a complexidade do setor, todos os outros ODS têm alguma relação.[@Corvalan2016 p 94-100] Neste sentido e utilizando sua matriz, a equipe do setor Saúde e Meio Ambiente do Santa Marcelina Saúde ^[A equipe do setor Saúde e Meio Ambiente Santa Marcelina que participou dessa construção é composta por: Almir, dos S. A.; André L. T. U. F.; Carla C. C.; Danilo R. P.; Gabriel R. S. F.; Gisele B. C.; Marlene R. N.; Jefferson dos S. R.; Marcelo C. M.; Paulo R. P. P.; Paulo J. B. V.; Raphael H. M.; Samantha C. H.; Samara S. M.], se reuniu em oficinas para avaliar quais Objetivos, Metas e Indicadores estabelecidos pela Comissão ODS do MSP @Andrade2020 poderiam estar relacionados às ações realizadas pelas equipes das UBS no âmbito do PAVS. 
 
-Esta distribuição pode ser visualizada no gráfico abaixo, no qual se verifica que entre `r params$acoes` e o ODS `r maior_ods`, pode haver mais indicadores relacionados:
+\newpage
+Para `r params$acoes` foram relacionados dessa maneira `r soma_acoes` indicadores selecionados, distribuidos entre os ODS: `r escreve_lista`. Esta distribuição pode ser visualizada no gráfico abaixo, onde pode-se verificar que o ODS `r maior_ods` é o que mais sinaliza indicadores relacionados ao `r params$acoes`:
 
 Gráfico 01: Associações `r params$acoes` e ODS
 
@@ -201,7 +212,7 @@ bd_pavs %>%
   )
 ```
 
-A seguir pode ser visualizada a tabela que apresenta os ODS, as metas municipais para seus respectivos atendimentos e os indicadores sugeridos para monitoramento associados a `r params$acoes`:
+A seguir pode ser visualizada a tabela que apresenta os ODS, as metas municipais para seus respectivos atendimentos e os indicadores sugeridos para monitoramento cujo os quais a equipe do setor Saúde e Meio Ambiente Santa Marcelina avaliaram guardar relações com `r params$acoes`:
 
 \newpage
 \blandscape
@@ -245,31 +256,35 @@ bd_pavs %>%
 ### 03. Ações PAVS e riscos ambientais
 A OMS estima que cerca de 1/4 de todas as mortes ocorridas anualmente no mundo estão relacionadas aos riscos ambientais. Para auxiliar os profissionais da área a identificar e planejar ações para a redução dessas mortes, bem como a redução de anos de vida perdidos por incapacidade, em decorrência destes riscos, publicou em 2016 a revisão atualizada do Relatório *"Preventing Disease through healthly environments"*. Nele são listadas 133 doenças ou agravos que, segundo evidências, tem relação direta com riscos ambientais, variando percentualmente segundo sua fração atribuível. Essas doenças ou agravos estão categorizadas em 4 grupos: "Agravos", "Condições neonatais e nutricionais", "Doenças ou Agravos não transmissíveis (DANT)" e "Doenças infecciosas e parasitárias".[@Corvalan2016 p 14-84]
 
-O PAVS pressupõe a realização de ações de promoção de saúde e/ou prevenção de agravos e doenças conduzidas pelas equipes das UBS com usuários e parceiros nos territórios, sob a perspectiva da redução da exposição humana aos riscos ambientais e/ou a promoção de ambientes saúdaveis. Para organizar de maneira didática as possíveis linhas de intervenção, os formuladores do programa instituiram eixos temáticos que as agrupassem. São 07 os eixos PAVS: "Agenda Ambiental na Administração Pública (A3P)", "Água, Ar e Solo", "Biodiversidade e Arborização", "Cultura e Comunicação", "Gerenciamento de Resíduos Sólidos", "Horta e Alimentação Saudável" e "Revitalização de Espaços Públicos".
+O PAVS pressupõe a realização de ações de promoção de saúde e/ou prevenção de agravos e doenças conduzidas pelas equipes das UBS com usuários e parceiros nos territórios, sob a perspectiva da redução da exposição humana aos riscos ambientais e/ou a promoção de ambientes saudaveis. Para organizar de maneira didática as possíveis linhas de intervenção, os formuladores do programa instituiram eixos temáticos que as agrupassem. São 07 os eixos temáticos PAVS: "Agenda Ambiental na Administração Pública (A3P)", "Água, Ar e Solo", "Biodiversidade e Arborização", "Cultura e Comunicação", "Gerenciamento de Resíduos Sólidos", "Horta e Alimentação Saudável" e "Revitalização de Espaços Públicos".
 
-Avaliando os eixos PAVS e as intervenção das equipes das UBS para o PAVS, os Assessores Técnicos de Meio Ambiente do Santa Marcelina Saúde relacionaram as seguintes possibilidades de intervenções práticas^[Com excessão dos Projetos e ações visando atender aos objetivos da Agenda Ambiental na Administração Pública (A3P) e  do Mais saúde, menos plástico, que têm a intenção de reduzir o impacto ambiental decorrente das atividades da unidade de saúde, todos os outros são relacionados à saúde ambiental]:
+Avaliando os eixos PAVS e as intervenção das equipes das UBS para o PAVS, os Assessores Técnicos de Meio Ambiente do Santa Marcelina Saúde ^[Jefferson S. R, Paulo José B. V., Paulo Roberto P.P.] relacionaram as seguintes possibilidades de intervenções práticas^[Com excessão dos Projetos e ações visando atender aos objetivos da "Agenda Ambiental na Administração Pública (A3P)" e  o "Mais saúde, menos plástico", que têm a intenção de reduzir o impacto ambiental decorrente das atividades da unidade de saúde, todos os outros são relacionados à saúde ambiental]:
 
-*Grupo de crianças e adolescentes com temas relacionados à saúde ambiental
-
-*Projetos e ações socioambientais de enfrentamento de doenças e agravos relacionados a linha de cuidado materno infantil
-
-* Projetos e ações socioambientais direcionados a linha de cuidado Saúde da mulher
-* Projetos e ações socioambientais direcionados a linha de cuidado Saúde do idoso
-* Projetos e ações socioambientais direcionados a linha de cuidado das PCD
-* Projetos e ações socioambientais de enfrentamento a doenças e agravos relacionados a resíduos e animais sinantrópicos
-* Projetos e ações socioambientais de enfrentamento a doenças e agravos relacionados à transtorno de acumulação
-* Projetos e ações socioambientais de enfrentamento a doenças e agravos de veiculação hídrica
-* Projetos e ações socioambientais de enfrentamento a doenças e agravos relacionados a poluição do ar
-* Projetos e ações socioambientais de enfrentamento a doenças e agravos relacionados a poluição solo
-* Projetos e ações socioambientais de enfrentamento a doenças e agravos relacionados a desastres socioambientais
-* Projetos e ações socioambientais de enfrentamento à insegurança alimentar
-* Projetos e ações socioambientais de promoção a alimentação saudável
+* Grupo de crianças e adolescentes com temas relacionados à saúde ambiental
+* Projetos e ações socioambientais direcionados a linha de cuidado:
+   * materno infantil
+   * Saúde da mulher
+   * Saúde do idoso
+   * das pessoas com deficiência (PCD)
+* Projetos e ações socioambientais de enfrentamento a doenças e agravos relacionados a:
+   * resíduos e animais sinantrópicos
+   * transtorno de acumulação
+   * poluição do ar
+   * poluição solo
+   * desastres socioambientais
+* Projetos e ações socioambientais de enfrentamento à: 
+   * doenças e agravos de veiculação hídrica
+   * insegurança alimentar
+* Projetos e ações socioambientais de promoção a:
+   * alimentação saudável
+   * ambientes verdes e saudáveis
 * Projetos e ações socioambientais de compostagem de sobra de alimentos in natura
-* Projetos e ações socioambientais de promoção de ambientes verdes e saudáveis
 * Projetos de promoção de saúde coletiva em espaços públicos
 * Projetos e ações visando atender aos objetivos da Agenda Ambiental na Administração Pública (A3P)
 * Projetos e ações que reduzam os riscos dos resíduos de serviço de saúde
 * Mais saúde, menos plástico
+
+A seguir pode-se visualizar em quais eixos PAVS estão relacionados os `r params$acoes`  
 
 ```{r pavs-acoes, fig.width = 7, fig.height = 3, warning=FALSE, echo=FALSE}
 bd_acoes_agravos %>% 
@@ -282,8 +297,8 @@ bd_acoes_agravos %>%
   labs(title = stringr::str_wrap(params$acoes, 50),
        subtitle = "Eixos PAVS relacionados",
        caption = "Fonte: Guia PAVS/Santa Marcelina Saúde") +
-   # scale_x_discrete(limits = c("ODS - NOME", "SITUAÇÕES"),
-   #                 expand = c(0.15, 0.05)) +
+  scale_fill_manual(values = cores_eixos,
+                    limits = force) +
   theme_void() +
   theme(
     plot.title = element_text(hjust = 0.5, size = 10),    # Center title position and size
@@ -293,7 +308,7 @@ bd_acoes_agravos %>%
 
 ```
 
-No que diz respeito aos `r params$acoes`, os gráfico e tabela à seguir sinalizam as provaveis doenças e agravos que podem ser consideradas:
+No que diz respeito aos `r params$acoes`, os gráfico e tabela à seguir sinalizam as prováveis doenças e agravos que podem ser consideradas:
 
 Gráfico 02: Doenças e agravos,  riscos ambientais associados e frações atribuíveis
 
