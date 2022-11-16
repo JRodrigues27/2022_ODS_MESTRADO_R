@@ -16,6 +16,6 @@ NeedsCompilation: yes
 Packaged: 2021-12-11 21:35:52 UTC; root
 Repository: CRAN
 Date/Publication: 2021-12-12 05:30:02 UTC
-Built: R 4.2.1; x86_64-w64-mingw32; 2022-10-04 02:53:04 UTC; windows
+Built: R 4.2.1; x86_64-w64-mingw32; 2022-10-06 02:08:09 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64
