@@ -150,10 +150,6 @@ Antes de  seguir no esforço em estabelecer esta relação, vale antes apresenta
 
 \endgroup
 
-<<<<<<< HEAD
-=======
-\newpage
->>>>>>> 392e2142567ac899f5df8b8d0516c9b9d71e340a
 OS ODS são a materialização da Agenda 2030. Em 2015 os 193 países membros da Organização das Nações Unidas (ONU), incluíndo o Brasil, na Cúpula das Nações Unidadas Sobre o Desenvolvimento Sustentável, elaboraram uma Agenda de compromissos para "acabar com a pobreza, proteger o meio ambiente e o clima e garantir que as pessoas, em todos os lugares, possam desfrutar de paz e de prosperidade"[@agendabr2030; @onu2030]. Conhecida como Agenda 2030, é composta por 17 Objetivos integrados, os ODS, com 169 metas a serem trabalhadas e monitoradas até 2030. No Brasil foi instituída uma comissão Nacional para os ODS em 2016 e em 2018 o Instituto de Pesquisas Avançadas (IPEA) juntamente com o Instituto Brasileiro de Geografia e Estatística (IBGE) foram responsáveis por consolidar a adaptação para o contexto e conjuntura nacional.  Em 2018 o MSP, voluntariamente, aderiu à Agenda 2030, ratificando o compromisso por meio da lei municipal nº 16.817. Desde então foi iniciado o processo gradual de associação entre as políticas públicas municipais e os ODS [@Andrade2020 p 03].
 
 Este registro é um excerto de uma matriz mais ampliada que envolve outras ações do PAVS e ainda outras estratégias de intervenções ligadas à saúde ambiental na Atenção Primária do MSP e os ODS. O resultado total e interativo dessa matriz pode ser acessado on-line clicando em https://santamarcelina.shinyapps.io/santamarcelinaods/, ou digitando este endereço em seu navegador preferido. 
@@ -265,13 +261,8 @@ O PAVS pressupõe a realização de ações de promoção de saúde e/ou preven�
 Avaliando os eixos PAVS e as intervenção das equipes das UBS para o PAVS, os Assessores Técnicos de Meio Ambiente do Santa Marcelina Saúde ^[Jefferson S. R, Paulo José B. V., Paulo Roberto P.P.] relacionaram as seguintes possibilidades de intervenções práticas^[Com excessão dos Projetos e ações visando atender aos objetivos da "Agenda Ambiental na Administração Pública (A3P)" e  o "Mais saúde, menos plástico", que têm a intenção de reduzir o impacto ambiental decorrente das atividades da unidade de saúde, todos os outros são relacionados à saúde ambiental]:
 
 * Grupo de crianças e adolescentes com temas relacionados à saúde ambiental
-<<<<<<< HEAD
 * Projetos e ações socioambientais direcionados a linha de cuidado:
    * materno infantil
-=======
-* Projetos e ações socioambientais de enfrentamento de doenças e agravos relacionados a linha de cuidado materno infantil
-* Projetos e ações socioambientais direcionados a linha de cuidado:
->>>>>>> 392e2142567ac899f5df8b8d0516c9b9d71e340a
    * Saúde da mulher
    * Saúde do idoso
    * das pessoas com deficiência (PCD)
