@@ -32,6 +32,6 @@ Author: Patrick O. Perry [aut, cph],
 Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 Repository: CRAN
 Date/Publication: 2021-07-24 15:00:02 UTC
-Built: R 4.2.1; x86_64-w64-mingw32; 2022-08-11 00:53:04 UTC; windows
+Built: R 4.2.0; x86_64-w64-mingw32; 2022-06-21 00:33:11 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64

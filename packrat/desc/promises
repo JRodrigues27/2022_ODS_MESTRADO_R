@@ -31,6 +31,6 @@ Author: Joe Cheng [aut, cre],
 Maintainer: Joe Cheng <joe@rstudio.com>
 Repository: CRAN
 Date/Publication: 2021-02-11 19:00:02 UTC
-Built: R 4.2.1; x86_64-w64-mingw32; 2022-10-04 02:19:44 UTC; windows
+Built: R 4.2.0; x86_64-w64-mingw32; 2022-06-23 02:26:57 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64
