@@ -1,3 +1,4 @@
+# 0. CARREGAR OS PACOTES NECESSÁRIOS ----
 library(tidyverse)
 library(shinydashboard) # elaborações de paineis no ambiente shiny
 library(readxl)
@@ -8,7 +9,8 @@ library(lubridate)
 library(DT)
 library(highcharter) #https://rpubs.com/techanswers88/sankey
 
-#CRIACAO DOS OBJETOS BANCO DE DADOS ----
+
+# 1. CRIACAO DOS OBJETOS BANCO DE DADOS ----
 
 #IMPORTA A ABA PAVS:
 bd.pavs <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
@@ -54,11 +56,22 @@ bd.agravos <- read_excel("2022_MESTRADO_ODS_BD.xlsx",
                          sheet = "DOENCAS_AGRAVOS", 
                          col_types = c("text", "text", "numeric", "text", "text", "text", "text"))
 
-#UNINDO OS BANCO DE DADOS DE PAVS_ACOES E AGRAVOS
+# 2. UNINDO OS BANCO DE DADOS DE PAVS_ACOES E AGRAVOS ----
 bd.acoes.agravos <- merge(bd.acoes, bd.agravos, all = TRUE) %>% 
   drop_na(`Risco ambiental`)
 
-#UNINDO OS BANCO DE DADOS E METAS SAÚDE ----
+
+bd.acoes.agravos2 <- bd.acoes.agravos %>% #para o grafico do relatorio
+cSplit("EIXO PAVS", ", ", "long", type.convert= FALSE) %>%
+  transmute(
+    `Eixos PAVS` = `EIXO PAVS`,
+    `Projetos/Ações` = `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)%>% 
+  drop_na(`Projetos/Ações`) %>% 
+  group_by(`Eixos PAVS`, `Projetos/Ações`) %>% 
+  count() %>% 
+  arrange(desc(n))
+
+# 3. UNINDO OS BANCO DE DADOS E METAS SAÚDE ----
 bd.1 <- bd.pavs %>% 
   select(`ODS - NUMERO`, `ODS - NOME`, `OBJETIVO - ONU`,
          `OBJETIVO - OMS`, `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`,
@@ -82,7 +95,7 @@ bd.ods <- cSplit(bd.ods, "Meta ODS Municipal - NUMERO", ",", "long", type.conver
 bd.ods.merge <- merge(bd.ods, bd.metas.ind, all = TRUE) %>% 
   drop_na(`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`, REFERENCIA)
 
-# CORRELACOES ----
+# 4. CORRELACOES ----
 correlacoes_ods_inst <- bd.ods.merge %>% 
   select(REFERENCIA, `ODS - NOME`)%>% 
   arrange(desc(REFERENCIA))
@@ -120,7 +133,7 @@ bd.ods.etapa <- bd.ods.merge %>%
          `ESTRATEGIA-ETAPA`) %>% 
   distinct()
 
-#6. UI - Interface do Usuario ----
+# 5. UI - Interface do Usuario ----
 loadingLogo <- function(href, src, loadingsrc, height = NULL, width = NULL, alt = NULL) {
   tagList(
     tags$head(
@@ -198,10 +211,10 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                       fluidPage( 
                         tabBox(
                           width = 12,
-                          #title = "Painel ODS Santa Marcelina Saúde",
+# 5. UI - ABA 01 ODS Estratégias e ações ----
                           tabPanel("ODS - Estratégias e ações",
                                    fluidRow(
-                                     box(title = "CORRELAÇÕES ODS ESTRATÉGIAS INSTITUCIONAIS",
+                                     box(title = "CORRELAÇÕES ESTRATÉGIAS DE SAÚDE AMBIENTAL E ODS",
                                          status = "success",
                                          solidHeader = TRUE,
                                          width = 12,
@@ -227,7 +240,8 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                      )
                                    ) #fecha fluidRow
                           ),#ODS - Estratégias e ações
-                          
+
+# 5. UI - ABA 02 ODS - Objetivos e Indicadores ----
                           tabPanel("ODS - Objetivos e Indicadores",
                                    fluidRow(
                                      box(title = textOutput("titulo_metas"),
@@ -249,6 +263,8 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                      
                                    )
                           ),
+
+# 5. UI - ABA 03 PAVS - Ações e Indicadores ----
                           tabPanel("PAVS - Ações e Indicadores",
                                    fluidRow(
                                      box(title = textOutput("titulo_pavs_ods"),
@@ -297,9 +313,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
 ) # FECHA UI
 
 
-
-
-# Define server logic required to draw a histogram
+# 6. SERVER - Interface de operação ----
 server <- function(input, output) {
   
   indicadores_filtrados <- reactive({
@@ -327,40 +341,11 @@ server <- function(input, output) {
       filter(`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS` %in% input$acoes)
   })
   
-  
-  output$grafico.agravos <- plotly::renderPlotly({
-    plot_ly(pavs_agravos(), x = ~`Doencas/ Agravos`, y = ~`Risco ambiental`*100, 
-            color = ~ CATEGORIAS, 
-            size = ~`Risco ambiental`, 
-            type = 'scatter', mode = 'markers', 
-            marker = list(symbol = 'circle', sizemode = 'diameter',
-                          line = list(width = 2, color = '#FFFFFF')), 
-            hoverinfo = 'text',
-            text = ~paste('<b>AGRAVO:</b>', `Doencas/ Agravos`, '<br>',
-                          '<br>Fração atribuível aos riscos ambientais - FAA:', `Risco ambiental`*100,'%',
-                          '<br>Método utilizado:', Metodo)) %>% 
-      layout(annotations=list(
-        list(text=paste0(unique(corr_pavs()$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`), 
-                         '<br>(doenças ou agravos relacionados e fração atribuível aos riscos ambientais)'),
-             xref="paper",x=0.5,
-             yref="paper",y=1,yshift=30,showarrow=FALSE, 
-             font=list(size=15,color='rgb(0,0,0)')),
-        list(text= 'fonte: WHO,2016' ,
-             xref="paper",x=1,xshift= 100,showarrow=FALSE, 
-             yref="paper",y=0,yshift= -20,showarrow=FALSE, 
-             font=list(size=10 ,color='rgb(0,0,0)'))),
-        yaxis = list(title = FALSE,
-                     ticksuffix = "%", range = c(0, 150)),
-        xaxis = list(title = FALSE)
-        
-      )
+  output$acoes <- renderUI({
+    selectInput("acoes", "Escolha o tipo de ação", choices = bd.ods.merge[bd.ods.merge$REFERENCIA==input$estrategias,"ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS"])
   })
   
-  output$titulo_pavs_download <- renderText({
-    text_pavs_button <- unique(corr_pavs()$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)
-    paste("RELATÓRIO PAVS - ODS: ", text_pavs_button)
-  }) 
-  
+  # 6. SERVER - Titulos ----
   output$titulo_estrategias_ods <- renderText({
     text_correlacoes <- input$estrategias
     paste("ODS relacionadas a estratégia", text_correlacoes)
@@ -396,11 +381,16 @@ server <- function(input, output) {
     paste("Indicadores ODS possivelmente associados com ", text_acoes)
   })
   
+  output$titulo_pavs_download <- renderText({
+    text_pavs_button <- unique(corr_pavs()$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)
+    paste("RELATÓRIO PAVS - ODS: ", text_pavs_button)
+  }) 
   
+  # 6. SERVER - ABA 01 Grafico Sankey CORRELAÇÕES ESTRATÉGIAS DE SAÚDE AMBIENTAL E ODS ----
   output$correlacoes_institucionais <- renderHighchart({
     highchart() %>%
       hc_add_series(data = data_to_sankey(correlacoes_ods_inst), type = "sankey", 
-                    name = "Correlações ODS e estratégias institucionais Santa Marcelina Saúde",
+                    name = "Correlações entre estratégias de Saúde Ambiental e ODS",
                     hcaes(from = from, to = to, weight = weight),
                     nodes = list(list(id = "01 ERRADICAÇÃO DA POBREZA", color = "#E5243B"),
                                  list(id = "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL", color = "#DDA63A"),
@@ -423,67 +413,9 @@ server <- function(input, output) {
                                  list(id = "Plano Municipal de saúde 2022 - 2025", color = "orange")
                     )) 
   })
-  
-  
-  output$correlacoes_estrategias <- renderHighchart({
-    highchart() %>%
-      hc_add_series(data = data_to_sankey(bd.ods.merge[bd.ods.merge$REFERENCIA == input$estrategias] %>%  #FILTRANDO O BD A PARTIR DO SELECT INPUT
-                                            select(`ODS - NOME`, `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)
-      ), type = "sankey", 
-      name = paste0("Correlações ODS e estratégias institucionais Santa Marcelina Saúde - ",input$estrategias),
-      hcaes(from = from, to = to, weight = weight),
-      nodes = list(list(id = "01 ERRADICAÇÃO DA POBREZA", color = "#E5243B"),
-                   list(id = "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL", color = "#DDA63A"),
-                   list(id = "03 SAÚDE E BEM ESTAR", color = "#4C9F38"),
-                   list(id = "04 EDUCAÇÃO DE QUALIDADE", color = "#C5192D"),
-                   list(id = "05 IGUALDADE DE GÊNERO", color = "#FF3A21"),
-                   list(id = "06 ÁGUA POTÁVEL E SANEAMENTO", color = "#26BDE2"),
-                   list(id = "07 ENERGIA LIMPA E ACESSÍVEL", color = "#FCC30B"),
-                   list(id = "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO", color = "#A21942"),
-                   list(id = "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA", color = "#FD6925"),
-                   list(id = "10 REDUÇÃO DAS DESIGUALDADES", color = "#DD1367"),
-                   list(id = "11 CIDADES E COMUNIDADES SUSTENTÁVEIS", color = "#FD9D24"),
-                   list(id = "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS", color = "#BF8B2E"),
-                   list(id = "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA", color = "#3F7E44"),
-                   list(id = "15 VIDA TERRESTRE", color = "#56C02B"),
-                   list(id = "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES", color = "#00689D"),
-                   list(id = "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO", color = "#19486A")  
-      )
-      )
-  })   
-  
-  output$correlacoes_pavs <-  renderHighchart({
-    highchart() %>%
-      hc_add_series(data = data_to_sankey(correlacoes_ods_pavs[correlacoes_ods_pavs$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS` == input$acoes] %>%  #FILTRANDO O BD A PARTIR DO SELECT INPUT
-                                            select(`ODS - NOME`, `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)
-      ), type = "sankey", 
-      name = paste0("Correlações ODS e ",input$acoes),
-      hcaes(from = from, to = to, weight = weight),
-      nodes = list(list(id = "01 ERRADICAÇÃO DA POBREZA", color = "#E5243B"),
-                   list(id = "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL", color = "#DDA63A"),
-                   list(id = "03 SAÚDE E BEM ESTAR", color = "#4C9F38"),
-                   list(id = "04 EDUCAÇÃO DE QUALIDADE", color = "#C5192D"),
-                   list(id = "05 IGUALDADE DE GÊNERO", color = "#FF3A21"),
-                   list(id = "06 ÁGUA POTÁVEL E SANEAMENTO", color = "#26BDE2"),
-                   list(id = "07 ENERGIA LIMPA E ACESSÍVEL", color = "#FCC30B"),
-                   list(id = "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO", color = "#A21942"),
-                   list(id = "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA", color = "#FD6925"),
-                   list(id = "10 REDUÇÃO DAS DESIGUALDADES", color = "#DD1367"),
-                   list(id = "11 CIDADES E COMUNIDADES SUSTENTÁVEIS", color = "#FD9D24"),
-                   list(id = "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS", color = "#BF8B2E"),
-                   list(id = "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA", color = "#3F7E44"),
-                   list(id = "15 VIDA TERRESTRE", color = "#56C02B"),
-                   list(id = "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES", color = "#00689D"),
-                   list(id = "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO", color = "#19486A")  
-      )
-      )
-  })   
-  
-  output$acoes <- renderUI({
-    selectInput("acoes", "Escolha o tipo de ação", choices = bd.ods.merge[bd.ods.merge$REFERENCIA==input$estrategias,"ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS"])
-  })
-  
-  output$etapa.ods <-  renderDT(
+ 
+  # 6. SERVER - ABA 01 Tabela  ODS relacionadas a estratégia... ----
+    output$etapa.ods <-  renderDT(
     bd.ods.etapa %>% filter(REFERENCIA %in% input$estrategias) %>% 
       mutate( ODS = case_when(
         `ODS - NOME` == "01 ERRADICAÇÃO DA POBREZA" ~ paste0("<img src='ods_01.png' height='70' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
@@ -511,10 +443,107 @@ server <- function(input, output) {
       mutate(ODS = paste0(ODS, collapse = "")) %>% 
       distinct(),
     options = list(paging = FALSE),
+    caption = htmltools::tags$caption(style = 'caption-side: bottom; text-align: left; color:black; font-size:100% ;',
+                                      'Fonte: Santa Marcelina Saúde: 2022'),
     escape = FALSE,
     rownames = FALSE
   )
   
+  # 6. SERVER - ABA 01 Grafico Sankey CORRELAÇÕES ODS - AÇÕES... ----
+  output$correlacoes_estrategias <- renderHighchart({
+    highchart() %>%
+      hc_add_series(data = data_to_sankey(bd.ods.merge[bd.ods.merge$REFERENCIA == input$estrategias] %>%  #FILTRANDO O BD A PARTIR DO SELECT INPUT
+                                            select(`ODS - NOME`, `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)
+      ), type = "sankey", 
+      name = paste0("Correlações entre estratégias de Saúde Ambiental e ODS - ",input$estrategias),
+      hcaes(from = from, to = to, weight = weight),
+      nodes = list(list(id = "01 ERRADICAÇÃO DA POBREZA", color = "#E5243B"),
+                   list(id = "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL", color = "#DDA63A"),
+                   list(id = "03 SAÚDE E BEM ESTAR", color = "#4C9F38"),
+                   list(id = "04 EDUCAÇÃO DE QUALIDADE", color = "#C5192D"),
+                   list(id = "05 IGUALDADE DE GÊNERO", color = "#FF3A21"),
+                   list(id = "06 ÁGUA POTÁVEL E SANEAMENTO", color = "#26BDE2"),
+                   list(id = "07 ENERGIA LIMPA E ACESSÍVEL", color = "#FCC30B"),
+                   list(id = "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO", color = "#A21942"),
+                   list(id = "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA", color = "#FD6925"),
+                   list(id = "10 REDUÇÃO DAS DESIGUALDADES", color = "#DD1367"),
+                   list(id = "11 CIDADES E COMUNIDADES SUSTENTÁVEIS", color = "#FD9D24"),
+                   list(id = "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS", color = "#BF8B2E"),
+                   list(id = "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA", color = "#3F7E44"),
+                   list(id = "15 VIDA TERRESTRE", color = "#56C02B"),
+                   list(id = "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES", color = "#00689D"),
+                   list(id = "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO", color = "#19486A")  
+      )
+      )
+  })   
+  
+  # 6. SERVER - ABA 02 Tabela ODS E METAS RELACIONADAS (GLOBAL E MUNICIPAL)... ----
+  output$detalhamento <-  renderDT(
+    bd.ods.merge %>% filter(`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS` %in% input$acoes) %>% 
+      drop_na(`Meta ODS Global - DESCRICAO`) %>%
+      mutate( ODS = case_when(
+        `ODS - NOME` == "01 ERRADICAÇÃO DA POBREZA" ~ paste0("<img src='ods_01.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL" ~ paste0("<img src='ods_02.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "03 SAÚDE E BEM ESTAR" ~ paste0("<img src='ods_03.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "04 EDUCAÇÃO DE QUALIDADE" ~ paste0("<img src='ods_04.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "05 IGUALDADE DE GÊNERO" ~ paste0("<img src='ods_05.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "06 ÁGUA POTÁVEL E SANEAMENTO" ~ paste0("<img src='ods_06.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "07 ENERGIA LIMPA E ACESSÍVEL" ~ paste0("<img src='ods_07.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO" ~ paste0("<img src='ods_08.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA" ~ paste0("<img src='ods_09.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "10 REDUÇÃO DAS DESIGUALDADES" ~ paste0("<img src='ods_10.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "11 CIDADES E COMUNIDADES SUSTENTÁVEIS" ~ paste0("<img src='ods_11.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS" ~ paste0("<img src='ods_12.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA" ~ paste0("<img src='ods_13.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "15 VIDA TERRESTRE" ~ paste0("<img src='ods_15.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES" ~ paste0("<img src='ods_16.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" ~ paste0("<img src='ods_17.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        TRUE ~ "NA"
+      )
+      ) %>% 
+      select(ODS, `Meta ODS Global - DESCRICAO`, `Meta ODS Municipal - DESCRICAO`) %>% 
+      arrange(ODS),
+    options = list(paging = FALSE),
+    caption = htmltools::tags$caption(style = 'caption-side: bottom; text-align: left; color:black; font-size:100% ;',
+                                      'Fonte: Santa Marcelina Saúde: 2022'),
+    escape = FALSE,
+    rownames = FALSE #list(lengthChange = FALSE)
+  )
+  
+  # 6. SERVER - ABA 02 Tabela INDICADORES ODS SUGERIDOS PARA... ---- 
+  output$indicadores <-    renderDT(
+    bd.metas %>% filter(`Meta ODS Municipal - DESCRICAO` %in% indicadores_filtrados()$`Meta ODS Municipal - DESCRICAO`) %>% 
+      filter(!is.na(INDICADOR)) %>%
+      mutate( ODS = case_when(
+        `ODS - NOME` == "01 ERRADICAÇÃO DA POBREZA" ~ paste0("<img src='ods_01.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL" ~ paste0("<img src='ods_02.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "03 SAÚDE E BEM ESTAR" ~ paste0("<img src='ods_03.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "04 EDUCAÇÃO DE QUALIDADE" ~ paste0("<img src='ods_04.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "05 IGUALDADE DE GÊNERO" ~ paste0("<img src='ods_05.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "06 ÁGUA POTÁVEL E SANEAMENTO" ~ paste0("<img src='ods_06.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "07 ENERGIA LIMPA E ACESSÍVEL" ~ paste0("<img src='ods_07.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO" ~ paste0("<img src='ods_08.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA" ~ paste0("<img src='ods_09.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "10 REDUÇÃO DAS DESIGUALDADES" ~ paste0("<img src='ods_10.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "11 CIDADES E COMUNIDADES SUSTENTÁVEIS" ~ paste0("<img src='ods_11.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS" ~ paste0("<img src='ods_12.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA" ~ paste0("<img src='ods_13.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "15 VIDA TERRESTRE" ~ paste0("<img src='ods_15.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
+        `ODS - NOME` == "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES" ~ paste0("<img src='ods_16.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        `ODS - NOME` == "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" ~ paste0("<img src='ods_17.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
+        TRUE ~ "NA"
+      )
+      ) %>% 
+      select(ODS, `Meta ODS Municipal - DESCRICAO`, INDICADOR, REFERENCIA) %>% 
+      bind_rows(indicadores_unir()) %>% 
+      arrange(ODS), 
+    options = list(paging = FALSE),
+    caption = htmltools::tags$caption(style = 'caption-side: bottom; text-align: left; color:black; font-size:100% ;',
+                                      'Fonte: Santa Marcelina Saúde: 2022', 'Comissão Municipal ODS, 2020'),
+    escape = FALSE,
+    rownames = FALSE #list(lengthChange = FALSE)
+  )
+  # 6. SERVER - ABA 03 Tabela Figuras PAVS Seleção - ODS ----
   output$pavs.ods <-  renderDT(
     bd.ods.etapa %>% filter(`ESTRATEGIA-ETAPA` %in% input$acoes) %>% 
       mutate( ODS = case_when(
@@ -543,88 +572,13 @@ server <- function(input, output) {
       distinct(),
     options = list(paging = FALSE,
                    dom = "t"),
+    caption = htmltools::tags$caption(style = 'caption-side: bottom; text-align: left; color:black; font-size:100% ;',
+                                      'Fonte: Santa Marcelina Saúde: 2022'),
     escape = FALSE,
     rownames = FALSE
   )
   
-  output$detalhamento <-  renderDT(
-    bd.ods.merge %>% filter(`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS` %in% input$acoes) %>% 
-      drop_na(`Meta ODS Global - DESCRICAO`) %>%
-      mutate( ODS = case_when(
-        `ODS - NOME` == "01 ERRADICAÇÃO DA POBREZA" ~ paste0("<img src='ods_01.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL" ~ paste0("<img src='ods_02.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "03 SAÚDE E BEM ESTAR" ~ paste0("<img src='ods_03.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "04 EDUCAÇÃO DE QUALIDADE" ~ paste0("<img src='ods_04.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "05 IGUALDADE DE GÊNERO" ~ paste0("<img src='ods_05.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "06 ÁGUA POTÁVEL E SANEAMENTO" ~ paste0("<img src='ods_06.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "07 ENERGIA LIMPA E ACESSÍVEL" ~ paste0("<img src='ods_07.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO" ~ paste0("<img src='ods_08.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA" ~ paste0("<img src='ods_09.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "10 REDUÇÃO DAS DESIGUALDADES" ~ paste0("<img src='ods_10.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "11 CIDADES E COMUNIDADES SUSTENTÁVEIS" ~ paste0("<img src='ods_11.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS" ~ paste0("<img src='ods_12.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA" ~ paste0("<img src='ods_13.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "15 VIDA TERRESTRE" ~ paste0("<img src='ods_15.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES" ~ paste0("<img src='ods_16.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" ~ paste0("<img src='ods_17.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        TRUE ~ "NA"
-      )
-      ) %>% 
-      select(ODS, `Meta ODS Global - DESCRICAO`, `Meta ODS Municipal - DESCRICAO`) %>% 
-      arrange(ODS),
-    options = list(paging = FALSE),
-    escape = FALSE,
-    rownames = FALSE #list(lengthChange = FALSE)
-  )
-  
-  output$indicadores <-    renderDT(
-    bd.metas %>% filter(`Meta ODS Municipal - DESCRICAO` %in% indicadores_filtrados()$`Meta ODS Municipal - DESCRICAO`) %>% 
-      filter(!is.na(INDICADOR)) %>%
-      mutate( ODS = case_when(
-        `ODS - NOME` == "01 ERRADICAÇÃO DA POBREZA" ~ paste0("<img src='ods_01.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL" ~ paste0("<img src='ods_02.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "03 SAÚDE E BEM ESTAR" ~ paste0("<img src='ods_03.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "04 EDUCAÇÃO DE QUALIDADE" ~ paste0("<img src='ods_04.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "05 IGUALDADE DE GÊNERO" ~ paste0("<img src='ods_05.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "06 ÁGUA POTÁVEL E SANEAMENTO" ~ paste0("<img src='ods_06.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "07 ENERGIA LIMPA E ACESSÍVEL" ~ paste0("<img src='ods_07.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO" ~ paste0("<img src='ods_08.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA" ~ paste0("<img src='ods_09.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "10 REDUÇÃO DAS DESIGUALDADES" ~ paste0("<img src='ods_10.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "11 CIDADES E COMUNIDADES SUSTENTÁVEIS" ~ paste0("<img src='ods_11.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS" ~ paste0("<img src='ods_12.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA" ~ paste0("<img src='ods_13.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "15 VIDA TERRESTRE" ~ paste0("<img src='ods_15.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"),
-        `ODS - NOME` == "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES" ~ paste0("<img src='ods_16.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        `ODS - NOME` == "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" ~ paste0("<img src='ods_17.png' height='100' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
-        TRUE ~ "NA"
-      )
-      ) %>% 
-      select(ODS, `Meta ODS Municipal - DESCRICAO`, INDICADOR, REFERENCIA) %>% 
-      bind_rows(indicadores_unir()) %>% 
-      arrange(ODS), 
-    options = list(paging = FALSE),
-    escape = FALSE,
-    rownames = FALSE #list(lengthChange = FALSE)
-  )
-  
-  output$tabela.agravos <- renderDT(
-    pavs_agravos() %>% 
-      transmute(
-        `Agravos/Doenças` = `Doencas/ Agravos`,
-        Categorias = CATEGORIAS,
-        `Eixo PAVS` = `EIXO PAVS`,
-        `Importância epidemiológica` = `Importância epidemiológica`,
-        `Fração atribuível aos riscos ambientais - FAA` = paste0(`Risco ambiental` * 100, "%"),
-        `Exposições associadas` = `Exposições associadas`,
-        `Ações para enfrentamento sugeridas` = `Ações para enfrentamento sugeridas`,
-        `Método para estabelecimento da FAA` = Metodo
-      ), 
-    options = list(paging = FALSE,
-                   columnDefs = list(list(className = 'dt-center', targets = 3))
-    )#list(lengthChange = FALSE)
-  )
-  
+  # 6. SERVER - ABA 03 Tabela Indicadores ODS possivelmente associados com PAVS Seleção ----
   output$tabela.indicadores <- renderDT(
     corr_pavs() %>% 
       mutate( ODS = case_when(
@@ -654,20 +608,101 @@ server <- function(input, output) {
         REFERENCIA = REFERENCIA.y) %>% 
       arrange(ODS),
     options = list(paging = FALSE),
+    caption = htmltools::tags$caption(style = 'caption-side: bottom; text-align: left; color:black; font-size:100% ;',
+                                      'Fonte: Santa Marcelina Saúde: 2022', 'Comissão Municipal ODS, 2020'),
     escape = FALSE,
     rownames = FALSE#list(lengthChange = FALSE)
   )
   
+  # 6. SERVER - ABA 03 Grafico Sankey CORRELAÇÕES ODS - PAVS SELEÇÃO----
+  output$correlacoes_pavs <-  renderHighchart({
+    highchart() %>%
+      hc_add_series(data = data_to_sankey(correlacoes_ods_pavs[correlacoes_ods_pavs$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS` == input$acoes] %>%  #FILTRANDO O BD A PARTIR DO SELECT INPUT
+                                            select(`ODS - NOME`, `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)
+      ), type = "sankey", 
+      name = paste0("Correlações ODS e ",input$acoes),
+      hcaes(from = from, to = to, weight = weight),
+      nodes = list(list(id = "01 ERRADICAÇÃO DA POBREZA", color = "#E5243B"),
+                   list(id = "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL", color = "#DDA63A"),
+                   list(id = "03 SAÚDE E BEM ESTAR", color = "#4C9F38"),
+                   list(id = "04 EDUCAÇÃO DE QUALIDADE", color = "#C5192D"),
+                   list(id = "05 IGUALDADE DE GÊNERO", color = "#FF3A21"),
+                   list(id = "06 ÁGUA POTÁVEL E SANEAMENTO", color = "#26BDE2"),
+                   list(id = "07 ENERGIA LIMPA E ACESSÍVEL", color = "#FCC30B"),
+                   list(id = "08 TRABALHO DECENTE E CRESCIMENTO ECONÔMICO", color = "#A21942"),
+                   list(id = "09 INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA", color = "#FD6925"),
+                   list(id = "10 REDUÇÃO DAS DESIGUALDADES", color = "#DD1367"),
+                   list(id = "11 CIDADES E COMUNIDADES SUSTENTÁVEIS", color = "#FD9D24"),
+                   list(id = "12 CONSUMO E PRODUÇÃO RESPONSÁVEIS", color = "#BF8B2E"),
+                   list(id = "13 AÇÃO CONTRA A MUDANÇA GLOBAL DO CLIMA", color = "#3F7E44"),
+                   list(id = "15 VIDA TERRESTRE", color = "#56C02B"),
+                   list(id = "16 PAZ, JUSTIÇA E INSTITUIÇÕES EFICAZES", color = "#00689D"),
+                   list(id = "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO", color = "#19486A")  
+      )
+      )
+  })   
   
-  ####BOTAO DOWNLOAD 
+  # 6. SERVER - ABA 03 Grafico Agravos e doenças - PAVS SELEÇÃO---- 
+  output$grafico.agravos <- plotly::renderPlotly({
+    plot_ly(pavs_agravos(), x = ~`Doencas/ Agravos`, y = ~`Risco ambiental`*100, 
+            color = ~ CATEGORIAS, 
+            size = ~`Risco ambiental`, 
+            type = 'scatter', mode = 'markers', 
+            marker = list(symbol = 'circle', sizemode = 'diameter',
+                          line = list(width = 2, color = '#FFFFFF')), 
+            hoverinfo = 'text',
+            text = ~paste('<b>AGRAVO:</b>', `Doencas/ Agravos`, '<br>',
+                          '<br>Fração atribuível aos riscos ambientais - FAA:', `Risco ambiental`*100,'%',
+                          '<br>Método utilizado:', Metodo)) %>% 
+      layout(annotations=list(
+        list(text=paste0(unique(corr_pavs()$`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`), 
+                         '<br>(doenças ou agravos relacionados e fração atribuível aos riscos ambientais)'),
+             xref="paper",x=0.5,
+             yref="paper",y=1,yshift=30,showarrow=FALSE, 
+             font=list(size=15,color='rgb(0,0,0)')),
+        list(text= 'Fonte: WHO,2016' ,
+             xref="paper",x=1,xshift= 100,showarrow=FALSE, 
+             yref="paper",y=0,yshift= -20,showarrow=FALSE, 
+             font=list(size=10 ,color='rgb(0,0,0)'))),
+        yaxis = list(title = FALSE,
+                     ticksuffix = "%", range = c(0, 150)),
+        xaxis = list(title = FALSE)
+        
+      )
+  })
+  
+  # 6. SERVER - ABA 03 Tabela Indicadores ODS possivelmente associados com PAVS Seleção ---- 
+  output$tabela.agravos <- renderDT(
+    pavs_agravos() %>% 
+      transmute(
+        `Agravos/Doenças` = `Doencas/ Agravos`,
+        Categorias = CATEGORIAS,
+        `Eixo PAVS` = `EIXO PAVS`,
+        `Importância epidemiológica` = `Importância epidemiológica`,
+        `Fração atribuível aos riscos ambientais - FAA` = paste0(`Risco ambiental` * 100, "%"),
+        `Exposições associadas` = `Exposições associadas`,
+        `Ações para enfrentamento sugeridas` = `Ações para enfrentamento sugeridas`,
+        `Método para estabelecimento da FAA` = Metodo
+      ), 
+    options = list(paging = FALSE,
+                   columnDefs = list(list(className = 'dt-center', targets = 3))
+                   
+    ),
+    caption = htmltools::tags$caption(style = 'caption-side: bottom; text-align: left; color:black; font-size:100% ;',
+                                      'Fonte: Santa Marcelina Saúde: 2022', 'Comissão Municipal ODS, 2020'),
+  )
+  
+  
+  # 7. BOTAO DOWNLOAD  ----
   output$relatorio_unidade <- downloadHandler(
-    filename = function() {         #nome do arquivo que sera salvo    
+    filename = function() {      
       paste0(today(),"_relatorio_", input$acoes, ".pdf")
     },  
     content = function(file){
       params <- list(acoes = input$acoes,
                      bd_pavs = corr_pavs(),
-                     bd_pavs_agravos = pavs_agravos()
+                     bd_pavs_agravos = pavs_agravos(),
+                     bd_pavs_acoesagravos = bd.acoes.agravos2 
       )
       
       rmarkdown::render(
@@ -679,7 +714,9 @@ server <- function(input, output) {
     }
   )
   
+  
+
 }
 
-# Run the application 
+# 8. RODA A APLICAÇÃO ----
 shinyApp(ui = ui, server = server)

@@ -1,0 +1,57 @@
+grafico aluvial acoes - ods
+bd_pavs %>% 
+  group_by(`ODS - NOME`, `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`) %>% 
+  count() %>% 
+  arrange(desc(n)) %>% 
+  ggplot(aes(axis1 = `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`, 
+             axis2 = `ODS - NOME`, y = n, fill = `ODS - NOME`)) +
+  scale_fill_manual(values = cores_ods,
+                    limits = force) +
+  geom_alluvium(aes(fill = `ODS - NOME`)) +
+  geom_stratum(color = 'white', size = 1) +
+  labs(title = stringr::str_wrap(params$acoes, 50),
+       subtitle = "ODS relacionadas",
+       caption = "Fonte: Agenda 2030 municipal") +
+  scale_size(guide = 'none') +
+  annotate("text", 
+           x = 1, 
+           y = 8,
+           size = 2,
+           label = stringr::str_wrap(params$acoes, 40),
+           color = "white",
+           fontface = "bold",
+           angle = 90) +
+  scale_x_discrete(limits = c("ODS - NOME", "SITUAÇÕES"),
+                   expand = c(0.15, 0.05)) +
+  theme_void() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 10),    # Center title position and size
+    plot.subtitle = element_text(hjust = 0.5, size = 9),            # Center subtitle
+    plot.caption = element_text(hjust = 0, size = 8, face = "italic"),# move caption to the left
+  )
+
+aluvial eixo pavs ação
+   ggplot(aes(axis1 = `Eixos PAVS`, 
+             axis2 = `Projetos/Ações`, y = n, fill = `Eixos PAVS`)) +
+   geom_alluvium(aes(fill = `Eixos PAVS`)) +
+  geom_stratum(color = 'white', size = 1) +
+  labs(title = stringr::str_wrap(params$acoes, 50),
+       subtitle = "ODS relacionadas",
+       caption = "Fonte: Agenda 2030 municipal") +
+  scale_size(guide = 'none') +
+ # annotate("text", 
+  #         x = 1, 
+   #        y = 8,
+    #       size = 2,
+     #      label = stringr::str_wrap(params$acoes, 40),
+      #     color = "white",
+       #    fontface = "bold",
+        #   angle = 90) +
+  #scale_x_discrete(limits = c("ODS - NOME", "SITUAÇÕES"),
+   #                expand = c(0.15, 0.05)) +
+  theme_void() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 10),    # Center title position and size
+    plot.subtitle = element_text(hjust = 0.5, size = 9),            # Center subtitle
+    plot.caption = element_text(hjust = 0, size = 8, face = "italic"),# move caption to the left
+  )
