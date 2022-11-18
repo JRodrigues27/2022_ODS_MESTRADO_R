@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.5)  16 NOV 2022 22:58
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.5)  17 NOV 2022 21:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353.tex
-(c:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353.tex
+**C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d.tex
+(c:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-11-02> (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -457,8 +457,8 @@ File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
 \BKM@id=\count316
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 121.
-(./file1714a4c4353.aux)
-\openout1 = `file1714a4c4353.aux'.
+(./fileb402f76731d.aux)
+\openout1 = `fileb402f76731d.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
 LaTeX Font Info:    ... okay on input line 126.
@@ -820,411 +820,47 @@ File: cabecalho.png Graphic file (type bmp)
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [5]
-File: C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353_files/figure-latex/grafico ods-pavs-1.pdf Graphic file (type pdf)
-<use C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353_files/figure-latex/grafico ods-pavs-1.pdf>
+File: C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d_files/figure-latex/grafico ods-pavs-1.pdf Graphic file (type pdf)
+<use C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d_files/figure-latex/grafico ods-pavs-1.pdf>
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [6]
-Overfull \hbox (59.73904pt too wide) in paragraph at lines 386--387
-[]\TU/lmr/m/n/12 REFERENCIA  
- []
-
 File: ods_01.png Graphic file (type bmp)
 <ods_01.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 390--391
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 393--394
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 393--394
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 393--394
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_01.png Graphic file (type bmp)
 <ods_01.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 394--395
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 400--402
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 400--402
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 400--402
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_03.png Graphic file (type bmp)
 <ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 402--403
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 405--407
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 405--407
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 405--407
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_03.png Graphic file (type bmp)
 <ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 407--408
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 414--416
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 414--416
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 414--416
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_03.png Graphic file (type bmp)
 <ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 416--417
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 424--425
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 424--425
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 424--425
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_03.png Graphic file (type bmp)
 <ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 425--426
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 430--432
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 430--432
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 430--432
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_04.png Graphic file (type bmp)
 <ods_04.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 432--433
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 441--442
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 441--442
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 441--442
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_04.png Graphic file (type bmp)
 <ods_04.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 442--443
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 452--453
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 452--453
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 452--453
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_06.png Graphic file (type bmp)
 <ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 453--454
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 456--457
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 456--457
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 456--457
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_06.png Graphic file (type bmp)
 <ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 457--458
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 460--461
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 460--461
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 460--461
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_06.png Graphic file (type bmp)
 <ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 461--462
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 466--468
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 466--468
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 466--468
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_06.png Graphic file (type bmp)
 <ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 468--469
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 472--473
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 472--473
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 472--473
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_06.png Graphic file (type bmp)
 <ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 473--474
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 477--478
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 477--478
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 477--478
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_06.png Graphic file (type bmp)
 <ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 478--479
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 482--483
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 482--483
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 482--483
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_06.png Graphic file (type bmp)
 <ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 483--484
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 487--488
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 487--488
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 487--488
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_12.png Graphic file (type bmp)
 <ods_12.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 488--489
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 494--495
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 494--495
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 494--495
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_12.png Graphic file (type bmp)
 <ods_12.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 495--496
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 501--503
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 501--503
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 501--503
-\TU/lmr/m/n/12 2030|  
- []
-
 File: ods_12.png Graphic file (type bmp)
 <ods_12.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 503--504
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 509--510
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 509--510
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 509--510
-\TU/lmr/m/n/12 2030|  
- []
-
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [7
@@ -1250,192 +886,120 @@ File: cabecalho.png Graphic file (type bmp)
 [13]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[14
+[14]
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[15]
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[16]
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[17
 
 ]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[15]
-File: C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353_files/figure-latex/pavs-acoes-1.pdf Graphic file (type pdf)
-<use C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353_files/figure-latex/pavs-acoes-1.pdf>
-File: cabecalho.png Graphic file (type bmp)
-<cabecalho.png>
-[16]
-File: C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353_files/figure-latex/plot pavs-agravos-1.pdf Graphic file (type pdf)
-<use C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file1714a4c4353_files/figure-latex/plot pavs-agravos-1.pdf>
-File: cabecalho.png Graphic file (type bmp)
-<cabecalho.png>
-[17]
-File: cabecalho.png Graphic file (type bmp)
-<cabecalho.png>
 [18]
+Underfull \hbox (badness 1215) in paragraph at lines 659--662
+[]\TU/lmr/m/n/12 Projetos e ações visando atender aos objetivos da Agenda Ambiental na
+ []
+
+File: C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d_files/figure-latex/pavs-acoes-1.pdf Graphic file (type pdf)
+<use C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d_files/figure-latex/pavs-acoes-1.pdf>
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [19]
-Overfull \hbox (28.83058pt too wide) in paragraph at lines 758--759
+File: C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d_files/figure-latex/plot pavs-agravos-1.pdf Graphic file (type pdf)
+<use C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb402f76731d_files/figure-latex/plot pavs-agravos-1.pdf>
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[20]
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[21]
+Overfull \hbox (28.83058pt too wide) in paragraph at lines 735--736
 []\TU/lmr/m/n/12 Agravos/Doenças  
  []
 
 
-Overfull \hbox (1.62881pt too wide) in paragraph at lines 760--761
+Overfull \hbox (1.62881pt too wide) in paragraph at lines 737--738
 []\TU/lmr/m/n/12 Eixos 
  []
 
 
-Overfull \hbox (3.50081pt too wide) in paragraph at lines 760--761
+Overfull \hbox (3.50081pt too wide) in paragraph at lines 737--738
 \TU/lmr/m/n/12 PAVS  
  []
 
 
-Overfull \hbox (28.83058pt too wide) in paragraph at lines 768--769
+Overfull \hbox (28.83058pt too wide) in paragraph at lines 745--746
 []\TU/lmr/m/n/12 Agravos/Doenças  
  []
 
 
-Overfull \hbox (1.62881pt too wide) in paragraph at lines 770--771
+Overfull \hbox (1.62881pt too wide) in paragraph at lines 747--748
 []\TU/lmr/m/n/12 Eixos 
  []
 
 
-Overfull \hbox (3.50081pt too wide) in paragraph at lines 770--771
+Overfull \hbox (3.50081pt too wide) in paragraph at lines 747--748
 \TU/lmr/m/n/12 PAVS  
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 776--776
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 753--753
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 777--777
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 754--754
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 778--778
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 755--755
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (23.45459pt too wide) in paragraph at lines 782--782
+Overfull \hbox (23.45459pt too wide) in paragraph at lines 759--759
 []|\TU/lmr/m/n/12 Esquistossomose|  
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 782--782
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 759--759
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (1.17058pt too wide) in paragraph at lines 783--783
+Overfull \hbox (1.17058pt too wide) in paragraph at lines 760--760
 \TU/lmr/m/n/12 (elefantiase)|  
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 783--783
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 760--760
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 784--784
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 761--761
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (2.14258pt too wide) in paragraph at lines 790--790
+Overfull \hbox (2.14258pt too wide) in paragraph at lines 767--767
 []|\TU/lmr/m/n/12 Oncocercose|  
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 790--790
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 767--767
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 791--791
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 768--768
 []|\TU/lmr/m/n/12 Água 
- []
-
-File: cabecalho.png Graphic file (type bmp)
-<cabecalho.png>
-[20
-
-]
-File: cabecalho.png Graphic file (type bmp)
-<cabecalho.png>
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 809--809
-$[] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][][][][][][][][][] [] [][][][][][] [] [][][][][][][] [] [][][][][][][][] [] [][][][][][] []$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 804--810
-
- []
-
-
-Underfull \hbox (badness 2894) in paragraph at lines 816--816
-[]\TU/lmr/m/n/12 Palmieri AL, Maria S, Fonseca S, Abbate MC, Artur L, Caldeira V, et
- []
-
-
-Underfull \hbox (badness 3118) in paragraph at lines 816--816
-\TU/lmr/m/n/12 al. Plano Municipal de Saúde-PMS [Internet]. 2022. Disponível em:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 816--816
-[][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][][][][][][][][][] [] [][][][][][] [] [][][][][] [] [][][][][] []$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 811--817
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 818--824
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 830--830
-\TU/lmr/m/n/12 em: [][]$[][][][][] [] [] [] [][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][] [] [][][][] [] [][] [] [][][][][][][] [] [][][][][][] [][] [][][][][][][][][] [][]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 825--831
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 837--837
-\TU/lmr/m/n/12 Coordenação da Atenção Básica; [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] []$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 832--838
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 839--845
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 846--851
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 852--858
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 859--866
-
  []
 
 File: cabecalho.png Graphic file (type bmp)
@@ -1443,35 +1007,117 @@ File: cabecalho.png Graphic file (type bmp)
 [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 867--873
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 786--786
+$[] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][][][][][][][][][] [] [][][][][][] [] [][][][][][][] [] [][][][][][][][] [] [][][][][][] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--787
 
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 879--879
-\TU/lmr/m/n/12 Disponível em: [][]$[][][][] [] [] [] [][][] [] [][][][][][] [] [][] [] [] [] [][][][][][] [] [] [] [][][][][][][][][][][][][][][][][][][][][][][] []$
+Underfull \hbox (badness 2894) in paragraph at lines 793--793
+[]\TU/lmr/m/n/12 Palmieri AL, Maria S, Fonseca S, Abbate MC, Artur L, Caldeira V, et
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 874--880
+Underfull \hbox (badness 3118) in paragraph at lines 793--793
+\TU/lmr/m/n/12 al. Plano Municipal de Saúde-PMS [Internet]. 2022. Disponível em:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 793--793
+[][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][][][][][][][][][] [] [][][][][][] [] [][][][][] [] [][][][][] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 788--794
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 881--887
+Underfull \hbox (badness 10000) in paragraph at lines 795--801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 807--807
+\TU/lmr/m/n/12 em: [][]$[][][][][] [] [] [] [][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][] [] [][][][] [] [][] [] [][][][][][][] [] [][][][][][] [][] [][][][][][][][][] [][]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--808
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 814--814
+\TU/lmr/m/n/12 Coordenação da Atenção Básica; [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--815
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 816--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 823--828
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 829--835
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 836--843
 
  []
 
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[23] (./file1714a4c4353.aux) ) 
+[24
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 844--850
+
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 856--856
+\TU/lmr/m/n/12 Disponível em: [][]$[][][][] [] [] [] [][][] [] [][][][][][] [] [][] [] [] [] [][][][][][] [] [] [] [][][][][][][][][][][][][][][][][][][][][][][] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 858--864
+
+ []
+
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[25] (./fileb402f76731d.aux) ) 
 Here is how much of TeX's memory you used:
- 19213 strings out of 477643
- 357003 string characters out of 5839643
- 900937 words of memory out of 5000000
+ 19215 strings out of 477643
+ 357050 string characters out of 5839643
+ 901870 words of memory out of 5000000
  40094 multiletter control sequences out of 15000+600000
- 475686 words of font info for 78 fonts, out of 8000000 for 9000
+ 475694 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,12n,121p,550b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on file1714a4c4353.pdf (23 pages).
+Output written on fileb402f76731d.pdf (25 pages).

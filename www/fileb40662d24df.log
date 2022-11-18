@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.5)  16 NOV 2022 20:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.5)  17 NOV 2022 21:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e.tex
-(c:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e.tex
+**C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df.tex
+(c:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-11-02> (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -341,94 +341,6 @@ Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is usel
 
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip73
-\multirow@cntb=\count303
-\multirow@dima=\skip74
-\bigstrutjot=\dimen183
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen184
-\WF@size=\dimen185
-\c@WF@wrappedlines=\count304
-\WF@box=\box62
-\WF@everypar=\toks26
-Package: wrapfig 2003/01/31  v 3.6
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count305
-\float@exts=\toks27
-\float@box=\box63
-\@float@everytoks=\toks28
-\@floatcapt=\box64
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
-\everycr=\toks29
-\minrowclearance=\skip75
-\rownum=\count306
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
-(c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
-Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
-Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
-)) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
-(c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box65
-\sift@deathcycles=\count307
-\@vwid@loff=\dimen186
-\@vwid@roff=\dimen187
-)
-\c@taburow=\count308
-\tabu@nbcols=\count309
-\tabu@cnt=\count310
-\tabu@Xcol=\count311
-\tabu@alloc=\count312
-\tabu@nested=\count313
-\tabu@target=\dimen188
-\tabu@spreadtarget=\dimen189
-\tabu@naturalX=\dimen190
-\tabucolX=\dimen191
-\tabu@Xsum=\dimen192
-\extrarowdepth=\dimen193
-\abovetabulinesep=\dimen194
-\belowtabulinesep=\dimen195
-\tabustrutrule=\dimen196
-\tabu@thebody=\toks30
-\tabu@footnotes=\toks31
-\tabu@box=\box66
-\tabu@arstrutbox=\box67
-\tabu@hleads=\box68
-\tabu@vleads=\box69
-\tabu@cellskip=\skip76
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box70
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
-Package: threeparttablex 2013/07/23 v0.3 by daleif
-(c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-(c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-\TPTL@width=\skip77
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box71
-\UL@hyphenbox=\box72
-\UL@skip=\skip78
-\UL@hook=\toks32
-\UL@height=\dimen197
-\UL@pe=\count314
-\UL@pixel=\dimen198
-\ULC@box=\box73
-Package: ulem 2019/11/18
-\ULdepth=\dimen199
-) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen256
-\c@nlinenum=\count315
-\TeXr@lab=\toks33
 ) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -464,11 +376,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count316
+\c@section@level=\count303
 )
-\@linkdim=\dimen257
-\Hy@linkcounter=\count317
-\Hy@pagecounter=\count318
+\@linkdim=\dimen183
+\Hy@linkcounter=\count304
+\Hy@pagecounter=\count305
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 ) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -476,7 +388,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count319
+\Hy@SavedSpaceFactor=\count306
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 )
@@ -488,21 +400,21 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count320
+\c@Hy@tempcnt=\count307
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4748.
-\XeTeXLinkMargin=\dimen258
+\XeTeXLinkMargin=\dimen184
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count321
-\Field@Width=\dimen259
-\Fld@charsize=\dimen260
+\Fld@menulength=\count308
+\Field@Width=\dimen185
+\Fld@charsize=\dimen186
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -514,9 +426,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6057.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count322
-\c@Item=\count323
-\c@Hfootnote=\count324
+\Hy@abspage=\count309
+\c@Item=\count310
+\c@Hfootnote=\count311
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
@@ -524,11 +436,11 @@ File: hxetex.def 2022-11-13 v7.00u Hyperref driver for XeTeX
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\pdfm@box=\box74
-\c@Hy@AnnotLevel=\count325
-\HyField@AnnotCount=\count326
-\Fld@listcount=\count327
-\c@bookmark@seq@number=\count328
+\pdfm@box=\box62
+\c@Hy@AnnotLevel=\count312
+\HyField@AnnotCount=\count313
+\Fld@listcount=\count314
+\c@bookmark@seq@number=\count315
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
@@ -539,49 +451,49 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip79
+\Hy@SectionHShift=\skip73
 ) (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
-\BKM@id=\count329
+\BKM@id=\count316
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 135.
-(./file171447c4e.aux)
-\openout1 = `file171447c4e.aux'.
+Package hyperref Info: Option `colorlinks' set `true' on input line 121.
+(./fileb40662d24df.aux)
+\openout1 = `fileb40662d24df.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 140.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 140.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 140.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 140.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 140.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 140.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 126.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 140.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 126.
 
 Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
 
@@ -607,7 +519,7 @@ Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 140.
+(Font)              scaled to size 12.0pt on input line 126.
 
 Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
 
@@ -639,15 +551,15 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 140.
+(Font)              scaled to size 12.0pt on input line 126.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 140.
+(Font)              `operators' in the math version `normal' on input line 126.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 140.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 126.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 140.
+(Font)              `operators' in the math version `bold' on input line 126.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 140.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 126.
 
 Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
 
@@ -726,13 +638,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 140.
+(Font)              `symbols' in the math version `normal' on input line 126.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 140.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 126.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 140.
+(Font)              `symbols' in the math version `bold' on input line 126.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 140.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 126.
 
 Package fontspec Info: latinmodern-math scale = 0.9999970497384594.
 
@@ -793,13 +705,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =7.2pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 140.
+(Font)              `largesymbols' in the math version `normal' on input line 126.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 140.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 126.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 140.
+(Font)              `largesymbols' in the math version `bold' on input line 126.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 140.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 126.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -834,7 +746,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 140.
+Package hyperref Info: Link coloring ON on input line 126.
 File: ods_01.png Graphic file (type bmp)
 <ods_01.png>
 File: ods_03.png Graphic file (type bmp)
@@ -846,51 +758,51 @@ File: ods_06.png Graphic file (type bmp)
 File: ods_12.png Graphic file (type bmp)
 <ods_12.png>
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.4pt on input line 163.
+(Font)              scaled to size 8.4pt on input line 149.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 163.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 163.
+(Font)              scaled to size 6.0pt on input line 149.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 149.
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 163.
+(Font)              scaled to size 12.0011pt on input line 149.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.40076pt on input line 163.
+(Font)              scaled to size 8.40076pt on input line 149.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 163.
+(Font)              scaled to size 6.00055pt on input line 149.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 163.
+(Font)              scaled to size 11.99872pt on input line 149.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.3991pt on input line 163.
+(Font)              scaled to size 8.3991pt on input line 149.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 163.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 163.
+(Font)              scaled to size 5.99936pt on input line 149.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 149.
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 163.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 149.
 (c:/Users/jeffs/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 166.
+(Font)              scaled to size 10.0pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 166.
+(Font)              scaled to size 7.0pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 166.
+(Font)              scaled to size 5.0pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 166.
+(Font)              scaled to size 10.00092pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 166.
+(Font)              scaled to size 7.00064pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 166.
+(Font)              scaled to size 5.00046pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 166.
+(Font)              scaled to size 9.99893pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 166.
+(Font)              scaled to size 6.99925pt on input line 152.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 166.
+(Font)              scaled to size 4.99947pt on input line 152.
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [1
@@ -905,419 +817,55 @@ File: cabecalho.png Graphic file (type bmp)
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [4]
-File: C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e_files/figure-latex/grafico ods-pavs-1.pdf Graphic file (type pdf)
-<use C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e_files/figure-latex/grafico ods-pavs-1.pdf>
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [5]
-Overfull \hbox (59.73904pt too wide) in paragraph at lines 378--379
-[]\TU/lmr/m/n/12 REFERENCIA  
- []
-
-File: ods_01.png Graphic file (type bmp)
-<ods_01.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 382--383
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 385--386
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 385--386
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 385--386
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_01.png Graphic file (type bmp)
-<ods_01.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 386--387
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 392--394
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 392--394
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 392--394
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_03.png Graphic file (type bmp)
-<ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 394--395
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 397--399
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 397--399
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 397--399
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_03.png Graphic file (type bmp)
-<ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 399--400
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 406--408
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 406--408
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 406--408
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_03.png Graphic file (type bmp)
-<ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 408--409
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 416--417
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 416--417
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 416--417
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_03.png Graphic file (type bmp)
-<ods_03.png>
-
-Overfull \hbox (9.36629pt too wide) in paragraph at lines 417--418
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 422--424
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 422--424
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 422--424
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_04.png Graphic file (type bmp)
-<ods_04.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 424--425
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 433--434
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 433--434
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 433--434
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_04.png Graphic file (type bmp)
-<ods_04.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 434--435
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 444--445
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 444--445
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 444--445
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_06.png Graphic file (type bmp)
-<ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 445--446
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 448--449
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 448--449
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 448--449
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_06.png Graphic file (type bmp)
-<ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 449--450
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 452--453
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 452--453
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 452--453
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_06.png Graphic file (type bmp)
-<ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 453--454
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 458--460
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 458--460
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 458--460
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_06.png Graphic file (type bmp)
-<ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 460--461
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 464--465
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 464--465
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 464--465
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_06.png Graphic file (type bmp)
-<ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 465--466
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 469--470
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 469--470
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 469--470
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_06.png Graphic file (type bmp)
-<ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 470--471
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 474--475
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 474--475
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 474--475
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_06.png Graphic file (type bmp)
-<ods_06.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 475--476
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 479--480
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 479--480
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 479--480
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_12.png Graphic file (type bmp)
-<ods_12.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 480--481
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 486--487
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 486--487
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 486--487
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_12.png Graphic file (type bmp)
-<ods_12.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 487--488
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 493--495
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 493--495
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 493--495
-\TU/lmr/m/n/12 2030|  
- []
-
-File: ods_12.png Graphic file (type bmp)
-<ods_12.png>
-
-Overfull \hbox (9.3687pt too wide) in paragraph at lines 495--496
- []|[]| 
- []
-
-
-Overfull \hbox (32.41505pt too wide) in paragraph at lines 501--502
-[]|\TU/lmr/m/n/12 AGENDA 
- []
-
-
-Overfull \hbox (48.95105pt too wide) in paragraph at lines 501--502
-\TU/lmr/m/n/12 MUNICIPAL 
- []
-
-
-Overfull \hbox (3.97505pt too wide) in paragraph at lines 501--502
-\TU/lmr/m/n/12 2030|  
- []
-
+File: C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df_files/figure-latex/grafico ods-pavs-1.pdf Graphic file (type pdf)
+<use C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df_files/figure-latex/grafico ods-pavs-1.pdf>
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[6
+[6]
+File: ods_01.png Graphic file (type bmp)
+<ods_01.png>
+File: ods_01.png Graphic file (type bmp)
+<ods_01.png>
+File: ods_03.png Graphic file (type bmp)
+<ods_03.png>
+File: ods_03.png Graphic file (type bmp)
+<ods_03.png>
+File: ods_03.png Graphic file (type bmp)
+<ods_03.png>
+File: ods_03.png Graphic file (type bmp)
+<ods_03.png>
+File: ods_04.png Graphic file (type bmp)
+<ods_04.png>
+File: ods_04.png Graphic file (type bmp)
+<ods_04.png>
+File: ods_06.png Graphic file (type bmp)
+<ods_06.png>
+File: ods_06.png Graphic file (type bmp)
+<ods_06.png>
+File: ods_06.png Graphic file (type bmp)
+<ods_06.png>
+File: ods_06.png Graphic file (type bmp)
+<ods_06.png>
+File: ods_06.png Graphic file (type bmp)
+<ods_06.png>
+File: ods_06.png Graphic file (type bmp)
+<ods_06.png>
+File: ods_06.png Graphic file (type bmp)
+<ods_06.png>
+File: ods_12.png Graphic file (type bmp)
+<ods_12.png>
+File: ods_12.png Graphic file (type bmp)
+<ods_12.png>
+File: ods_12.png Graphic file (type bmp)
+<ods_12.png>
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[7
 
 ]
-File: cabecalho.png Graphic file (type bmp)
-<cabecalho.png>
-[7]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [8]
@@ -1335,62 +883,65 @@ File: cabecalho.png Graphic file (type bmp)
 [12]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[13
-
-]
+[13]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [14]
-File: C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e_files/figure-latex/pavs-acoes-1.pdf Graphic file (type pdf)
-<use C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e_files/figure-latex/pavs-acoes-1.pdf>
-File: C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e_files/figure-latex/plot pavs-agravos-1.pdf Graphic file (type pdf)
-<use C:/Users/jeffs/AppData/Local/Temp/RtmpiSprX7/file171447c4e_files/figure-latex/plot pavs-agravos-1.pdf>
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [15]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[16]
+[16
+
+]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
 [17]
-Overfull \hbox (28.83058pt too wide) in paragraph at lines 733--734
+Underfull \hbox (badness 1215) in paragraph at lines 659--662
+[]\TU/lmr/m/n/12 Projetos e ações visando atender aos objetivos da Agenda Ambiental na
+ []
+
+File: C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df_files/figure-latex/pavs-acoes-1.pdf Graphic file (type pdf)
+<use C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df_files/figure-latex/pavs-acoes-1.pdf>
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[18]
+File: C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df_files/figure-latex/plot pavs-agravos-1.pdf Graphic file (type pdf)
+<use C:/Users/jeffs/AppData/Local/Temp/RtmpkjSxHG/fileb40662d24df_files/figure-latex/plot pavs-agravos-1.pdf>
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[19]
+File: cabecalho.png Graphic file (type bmp)
+<cabecalho.png>
+[20]
+Overfull \hbox (28.83058pt too wide) in paragraph at lines 735--736
 []\TU/lmr/m/n/12 Agravos/Doenças  
  []
 
 
-Overfull \hbox (1.62881pt too wide) in paragraph at lines 735--736
+Overfull \hbox (1.62881pt too wide) in paragraph at lines 737--738
 []\TU/lmr/m/n/12 Eixos 
  []
 
 
-Overfull \hbox (3.50081pt too wide) in paragraph at lines 735--736
+Overfull \hbox (3.50081pt too wide) in paragraph at lines 737--738
 \TU/lmr/m/n/12 PAVS  
  []
 
 
-Overfull \hbox (28.83058pt too wide) in paragraph at lines 743--744
+Overfull \hbox (28.83058pt too wide) in paragraph at lines 745--746
 []\TU/lmr/m/n/12 Agravos/Doenças  
  []
 
 
-Overfull \hbox (1.62881pt too wide) in paragraph at lines 745--746
+Overfull \hbox (1.62881pt too wide) in paragraph at lines 747--748
 []\TU/lmr/m/n/12 Eixos 
  []
 
 
-Overfull \hbox (3.50081pt too wide) in paragraph at lines 745--746
+Overfull \hbox (3.50081pt too wide) in paragraph at lines 747--748
 \TU/lmr/m/n/12 PAVS  
- []
-
-
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 751--751
-[]|\TU/lmr/m/n/12 Água 
- []
-
-
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 752--752
-[]|\TU/lmr/m/n/12 Água 
  []
 
 
@@ -1399,23 +950,18 @@ Overfull \hbox (0.75282pt too wide) in paragraph at lines 753--753
  []
 
 
-Overfull \hbox (23.45459pt too wide) in paragraph at lines 757--757
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 754--754
+[]|\TU/lmr/m/n/12 Água 
+ []
+
+
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 755--755
+[]|\TU/lmr/m/n/12 Água 
+ []
+
+
+Overfull \hbox (23.45459pt too wide) in paragraph at lines 759--759
 []|\TU/lmr/m/n/12 Esquistossomose|  
- []
-
-
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 757--757
-[]|\TU/lmr/m/n/12 Água 
- []
-
-
-Overfull \hbox (1.17058pt too wide) in paragraph at lines 758--758
-\TU/lmr/m/n/12 (elefantiase)|  
- []
-
-
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 758--758
-[]|\TU/lmr/m/n/12 Água 
  []
 
 
@@ -1424,121 +970,151 @@ Overfull \hbox (0.75282pt too wide) in paragraph at lines 759--759
  []
 
 
-Overfull \hbox (2.14258pt too wide) in paragraph at lines 765--765
+Overfull \hbox (1.17058pt too wide) in paragraph at lines 760--760
+\TU/lmr/m/n/12 (elefantiase)|  
+ []
+
+
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 760--760
+[]|\TU/lmr/m/n/12 Água 
+ []
+
+
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 761--761
+[]|\TU/lmr/m/n/12 Água 
+ []
+
+
+Overfull \hbox (2.14258pt too wide) in paragraph at lines 767--767
 []|\TU/lmr/m/n/12 Oncocercose|  
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 765--765
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 767--767
 []|\TU/lmr/m/n/12 Água 
  []
 
 
-Overfull \hbox (0.75282pt too wide) in paragraph at lines 766--766
+Overfull \hbox (0.75282pt too wide) in paragraph at lines 768--768
 []|\TU/lmr/m/n/12 Água 
  []
 
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[18
+[21
 
 ]
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 784--784
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 786--786
 $[] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][][][][][][][][][] [] [][][][][][] [] [][][][][][][] [] [][][][][][][][] [] [][][][][][] []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--785
+Underfull \hbox (badness 10000) in paragraph at lines 781--787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 791--791
-\TU/lmr/m/n/12 Coordenação da Atenção Básica; [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] []$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 786--792
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 793--799
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 800--805
-
- []
-
-
-Underfull \hbox (badness 2894) in paragraph at lines 811--811
+Underfull \hbox (badness 2894) in paragraph at lines 793--793
 []\TU/lmr/m/n/12 Palmieri AL, Maria S, Fonseca S, Abbate MC, Artur L, Caldeira V, et
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 811--811
+Underfull \hbox (badness 3118) in paragraph at lines 793--793
 \TU/lmr/m/n/12 al. Plano Municipal de Saúde-PMS [Internet]. 2022. Disponível em:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--811
+Underfull \hbox (badness 10000) in paragraph at lines 793--793
 [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] [] [][][][][][][][][][][] [] [][][][][][] [] [][][][][] [] [][][][][] []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 806--812
+Underfull \hbox (badness 10000) in paragraph at lines 788--794
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 813--819
+Underfull \hbox (badness 10000) in paragraph at lines 795--801
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 825--825
+Underfull \hbox (badness 10000) in paragraph at lines 807--807
 \TU/lmr/m/n/12 em: [][]$[][][][][] [] [] [] [][][][] [] [][][][][][][] [] [][][] [] [][][][][][][][][] [] [][][][] [] [][] [] [][][][][][][] [] [][][][][][] [][] [][][][][][][][][] [][]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 820--826
+Underfull \hbox (badness 10000) in paragraph at lines 802--808
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 827--833
+Underfull \hbox (badness 10000) in paragraph at lines 814--814
+\TU/lmr/m/n/12 Coordenação da Atenção Básica; [][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][] [] [][] [] [][][] [] [][] [] [][][][][][] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--815
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 834--841
+Underfull \hbox (badness 10000) in paragraph at lines 816--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 823--828
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 829--835
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 836--843
 
  []
 
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[20
+[23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 842--848
+Underfull \hbox (badness 10000) in paragraph at lines 844--850
+
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 856--856
+\TU/lmr/m/n/12 Disponível em: [][]$[][][][] [] [] [] [][][] [] [][][][][][] [] [][] [] [] [] [][][][][][] [] [] [] [][][][][][][][][][][][][][][][][][][][][][][] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 858--864
 
  []
 
 File: cabecalho.png Graphic file (type bmp)
 <cabecalho.png>
-[21] (./file171447c4e.aux) ) 
+[24] (./fileb40662d24df.aux) ) 
 Here is how much of TeX's memory you used:
- 20706 strings out of 477643
- 382901 string characters out of 5839643
- 928740 words of memory out of 5000000
- 41529 multiletter control sequences out of 15000+600000
- 475800 words of font info for 80 fonts, out of 8000000 for 9000
+ 19215 strings out of 477643
+ 357050 string characters out of 5839643
+ 901871 words of memory out of 5000000
+ 40094 multiletter control sequences out of 15000+600000
+ 475694 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,13n,121p,548b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,12n,121p,550b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on file171447c4e.pdf (21 pages).
+Output written on fileb40662d24df.pdf (24 pages).

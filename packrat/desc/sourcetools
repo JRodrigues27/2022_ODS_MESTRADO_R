@@ -19,6 +19,6 @@ NeedsCompilation: yes
 Packaged: 2018-04-25 03:19:22 UTC; kevin
 Repository: CRAN
 Date/Publication: 2018-04-25 03:38:09 UTC
-Built: R 4.2.0; x86_64-w64-mingw32; 2022-06-23 01:00:49 UTC; windows
+Built: R 4.2.1; x86_64-w64-mingw32; 2022-10-04 00:54:44 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64
