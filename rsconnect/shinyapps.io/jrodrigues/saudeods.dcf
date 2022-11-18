@@ -5,10 +5,10 @@ account: jrodrigues
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7597590
-bundleId: 6529722
+bundleId: 6529752
 url: https://jrodrigues.shinyapps.io/saudeods/
-when: 1668787099.38021
-lastSyncTime: 1668787099.38026
+when: 1668787668.47276
+lastSyncTime: 1668787668.47282
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: ~$2022_logos_mestrado.pptx|~$2022_MESTRADO_ODS_BD.xlsx|2022_ODS_BD.xlsx|rascunhos.txt
