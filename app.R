@@ -62,7 +62,7 @@ bd.acoes.agravos <- merge(bd.acoes, bd.agravos, all = TRUE) %>%
 
 
 bd.acoes.agravos2 <- bd.acoes.agravos %>% #para o grafico do relatorio
-cSplit("EIXO PAVS", ", ", "long", type.convert= FALSE) %>%
+  cSplit("EIXO PAVS", ", ", "long", type.convert= FALSE) %>%
   transmute(
     `Eixos PAVS` = `EIXO PAVS`,
     `Projetos/Ações` = `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)%>% 
@@ -211,7 +211,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                       fluidPage( 
                         tabBox(
                           width = 12,
-# 5. UI - ABA 01 ODS Estratégias e ações ----
+                          # 5. UI - ABA 01 ODS Estratégias e ações ----
                           tabPanel("ODS - Estratégias e ações",
                                    fluidRow(
                                      box(title = "CORRELAÇÕES ESTRATÉGIAS DE SAÚDE AMBIENTAL E ODS",
@@ -240,8 +240,8 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                      )
                                    ) #fecha fluidRow
                           ),#ODS - Estratégias e ações
-
-# 5. UI - ABA 02 ODS - Objetivos e Indicadores ----
+                          
+                          # 5. UI - ABA 02 ODS - Objetivos e Indicadores ----
                           tabPanel("ODS - Objetivos e Indicadores",
                                    fluidRow(
                                      box(title = textOutput("titulo_metas"),
@@ -263,8 +263,8 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                                      
                                    )
                           ),
-
-# 5. UI - ABA 03 PAVS - Ações e Indicadores ----
+                          
+                          # 5. UI - ABA 03 PAVS - Ações e Indicadores ----
                           tabPanel("PAVS - Ações e Indicadores",
                                    fluidRow(
                                      box(title = textOutput("titulo_pavs_ods"),
@@ -413,9 +413,9 @@ server <- function(input, output) {
                                  list(id = "Plano Municipal de saúde 2022 - 2025", color = "orange")
                     )) 
   })
- 
+  
   # 6. SERVER - ABA 01 Tabela  ODS relacionadas a estratégia... ----
-    output$etapa.ods <-  renderDT(
+  output$etapa.ods <-  renderDT(
     bd.ods.etapa %>% filter(REFERENCIA %in% input$estrategias) %>% 
       mutate( ODS = case_when(
         `ODS - NOME` == "01 ERRADICAÇÃO DA POBREZA" ~ paste0("<img src='ods_01.png' height='70' data-toggle= 'tooltip' data-placement= 'right' title=\"", `OBJETIVO - OMS`,"\"></img>"), 
@@ -715,7 +715,7 @@ server <- function(input, output) {
   )
   
   
-
+  
 }
 
 # 8. RODA A APLICAÇÃO ----

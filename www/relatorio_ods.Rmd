@@ -17,15 +17,11 @@ bibliography: bibliografia.bib
 csl: vancouver.csl
 lang: pt-BR
 header-includes:
--  \usepackage{graphicx}
--  \usepackage{fancyhdr}
--  \pagestyle{fancy}
--  \setlength\headheight{28pt}
--  \fancyhead[L]{\includegraphics[width=10cm]{cabecalho.png}}
--  \fancyfoot[LE,RO]{Jefferson Rodrigues}
 - \usepackage{lscape}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
+- \usepackage{graphicx}
+- \usepackage{fancyhdr}
 ---
 
 ```{r setup, include=FALSE}
@@ -52,8 +48,6 @@ integer_breaks <- function(n = 5, ...) {
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## RELATÓRIO PAVS-ODS: `r params$acoes` (EM CONSTRUÇÃO)
-
 ```{r data, include = FALSE}
 bd_pavs <- params$bd_pavs
 
@@ -66,7 +60,7 @@ soma_acoes <- paste0(nrow(bd_pavs))
 lista_ods <- bd_pavs %>% 
   select(`ODS - NOME`) %>% 
   arrange(`ODS - NOME`) 
-  
+
 escreve_lista <- unique(unlist(strsplit(as.character(lista_ods$`ODS - NOME`), ",")))
 
 maior_ods <- bd_pavs %>% 
@@ -77,7 +71,7 @@ maior_ods <- bd_pavs %>%
   head(1) %>% 
   paste0()
 
-  unlist(as.character(head(lista_ods$`ODS - NOME`),1))
+unlist(as.character(head(lista_ods$`ODS - NOME`),1))
 
 cores_ods <- c("01 ERRADICAÇÃO DA POBREZA" = "#E5243B",
                "02 FOME ZERO E AGRICULTURA SUSTENTÁVEL" = "#DDA63A",
@@ -97,14 +91,25 @@ cores_ods <- c("01 ERRADICAÇÃO DA POBREZA" = "#E5243B",
                "17 PARCERIAS E MEIOS DE IMPLEMENTAÇÃO" = "#19486A")
 
 cores_eixos <- c("A3P (Agenda Ambiental na Administração Pública)" = "deeppink",
-"Água Ar e Solo" = "deepskyblue", 
-"Biodiversidade e Arborização" = "green", 
-"Cultura e Comunicação" = "orange",
-"Gerenciamento de Resíduos Sólidos" = "gray", 
-"Horta e Alimentação Saudável" = "aquamarine", 
-"Revitalização de Espaços Públicos" = "chocolate"
+                 "Água Ar e Solo" = "deepskyblue", 
+                 "Biodiversidade e Arborização" = "green", 
+                 "Cultura e Comunicação" = "orange",
+                 "Gerenciamento de Resíduos Sólidos" = "gray", 
+                 "Horta e Alimentação Saudável" = "aquamarine", 
+                 "Revitalização de Espaços Públicos" = "chocolate"
 )
+
+hsize = 1.5 #para o gráfico rosca
+
+
 ```
+\pagestyle{fancy}
+\setlength\headheight{28pt}
+\fancyhead[L]{\includegraphics[width=10cm]{cabecalho.png}}
+
+## RELATÓRIO PAVS-ODS: `r params$acoes` (EM CONSTRUÇÃO)  ^[ **ATENÇÃO:** Evite impressões desnecessárias. Se for mesmo preciso imprimir esse documento, prefira a opção em formato livreto, frente e verso ou rascunho. Menos é mais.]
+*Jefferson Rodrigues* ^[Assessor técnico I - Meio Ambiente no Santa Marcelina Saúde]
+
 ```{r associacao ods-pavs, fig.width = 7, fig.height = 3, echo=FALSE}
 bd_pavs %>% 
   select(`ODS - NOME`) %>% 
@@ -137,21 +142,29 @@ bd_pavs %>%
                  caption = attr(bd_pavs, "Fonte xxx") )
 
 ```
+\begingroup
+\fontsize{10}{10}\setstretch{1.0}\setlength{\leftskip}{2cm}
+**RESUMO:** Relatório técnico automatizado emitido através do *Painel Interativo Saúde Ambiental - ODS Santa Marcelina* ^[O Painel Interativo Saúde Ambiental - ODS Santa Marcelina, https://jrodrigues.shinyapps.io/saudeods/, é um produto técnico apresentado como requisito para a conclusão do Programa de Mestrado Profissional em Saúde Coletiva: Políticas e Gestão em Saúde da Faculdade de Ciências Médicas da Unicamp em 2023. Sob a orientação do professor Dr. Herling Gregorio Aguilar Alonzo, foi elaborado à partir da necessidade apresentada pela equipe técnica do PAVS, através de sua Gestora Regional da Coordenadoria Regional de Saúde Leste, Vaéria Y. N., com o apoio da Presidência do Santa Marcelina Saúde e sua Coordenação Administrativa.] ^[Recomendamos a visualização frequente pois ele está em constante atualização, podendo haver melhorias nas próximas versões. Elaborado com a linguagem de programação R @r2022. Se quiser contribuir com correções, sugestões ou quiser adaptar a ferramenta às necessidades da sua rede de Saúde, por gentileza entre em contato através do e-mail: jeff.sus@hotmail.com ou pelo github: https://github.com/JRodrigues27/2022_ODS_MESTRADO_R. Versão 01/2022, compilado em `r format(Sys.time(), '%d/%m/%y')`.Use Software livre!].Tem a função de apresentar as correlações sugeridas pela equipe do setor Saúde e Meio Ambiente Santa Marcelina entre as ações do PAVS, os ODS, suas metas municipais e seus indicadores. O relatório apresenta ainda correlações entre essas ações, as doencas e agravos associadas aos riscos socioambientais e estratégias de enfrentamentos propostas pela Organização Mundial da Saúde no relatório *"Preventing disease through healthly environments: A global assessment of the burden of disease from environmental risks" @Corvalan2016*
 
-### 01. Apresentação
+**Palavras-chave:** SUS, UNICAMP, Santa Marcelina Saúde, Saúde Ambiental, PAVS, Agenda 2030, ODS.
 
-O *Relatório PAVS - ODS* ^[ **ATENÇÃO:** Evite impressões desnecessárias. Se for mesmo preciso imprimir esse documento, prefira a opção em formato livreto, frente e verso ou rascunho. Menos é mais.] ^[ Recomendamos a visualização constante pois ele está em melhoria contínua, podendo haver correções e melhorias nas próximas versões. Se ao avaliar as ferramentas apresentadas surgirem possibilidade de melhoria, por gentileza entre em contato através do e-mail: jrodrigues.sus@hotmail.com.  Este relatório foi compilado em `r format(Sys.time(), '%d/%m/%y')`. Versão 01/2022.] é uma versão imprimível das sugestões de correlações entre **`r params$acoes`** realizados pelas equipes das Unidades Básicas de Saúde (UBS) do Município de São Paulo (MSP) através do Programa Ambientes Verdes e Saudáveis (PAVS) e as metas e indicadores dos Objetivos do Desenvolvimento Sustentável (ODS) expressas na Agenda Municipal 2030. @Andrade2020
-
-Este registro é um excerto de uma matriz mais ampliada que envolve outras ações do PAVS e ainda outras estratégias de intervenções ligadas à saúde ambiental na Atenção Primária do MSP e os ODS. O resultado total e interativo dessa matriz pode ser acessado on-line clicando em https://santamarcelina.shinyapps.io/santamarcelinaods/, ou digitando este endereço em seu navegador preferido. 
+\endgroup
 
 \newpage
+## 01. Apresentação
+
+O *Relatório PAVS - ODS* é uma versão imprimível das sugestões de correlações entre **`r params$acoes`** realizados pelas equipes das Unidades Básicas de Saúde (UBS) do Município de São Paulo (MSP) através do Programa Ambientes Verdes e Saudáveis (PAVS) e as metas e indicadores dos Objetivos do Desenvolvimento Sustentável (ODS) expressas na Agenda Municipal 2030. @Andrade2020
+
+Este registro é um excerto de uma matriz mais ampliada que envolve outras ações do PAVS e ainda outras estratégias de intervenções ligadas à saúde ambiental na Atenção Primária do MSP e os ODS. O resultado total e interativo dessa matriz pode ser acessado on-line clicando em https://jrodrigues.shinyapps.io/saudeods/, ou digitando este endereço em seu navegador preferido. 
+
 O link dá acesso ao *Painel Interativo Saúde Ambiental - ODS Santa Marcelina*, onde se buscou relacionar os ODS com as estratégias de atuação de saúde ambiental do MSP no escopo das seguintes diretrizes:
 
 * As ações do Plano Municipal de Saúde (PMS) de São Paulo 2022 - 2025 @Palmierei2022 que envolvem o PAVS 
-* As ações de educação permanente relacionadas à saúde ambiental ou ao  PAVS registras no Plano Municipal de Educação Permanente (PLAMEP) 2022 - 2025 pela Coordenadoria Regional de Saúde (CRS) Leste, Supervisões Técnicas de Saúde (STS), Unidades de Vigilância em Saúde (UVIS), Conselho Gestores locais e Organizações Sociais de Saúde parceiras (OSS) atuantes nesta CRS.
+* As ações de educação permanente relacionadas à saúde ambiental ou ao  PAVS registras no Plano Municipal de Educação Permanente (PLAMEP) 2022 - 2025 pela Coordenadoria Regional de Saúde (CRS) Leste
 * Programa Ambientes Verdes e Saudáveis (PAVS)^[A SMS de São Paulo disponibiliza muito material sobre o PAVS. Para conhecer mais, acesse: https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/atencao_basica/pavs/index.php?p=215712]
 
-Os Planos de Saúde são instrumentos de gestão do Sistema Único de Saúde Brasileiro (SUS) que segundo bases epidemiológicas e sociodemográficas, organizam os planejamentos e aportes financeiros para as ações em saúde. Para a sua realização conta com participação de usuários, gestores e profissionais de saúde. Cada ente federativo (Federação, Estados ou Municípios) deve atualizar seu Plano através de oficinas e conferências a cada quatro anos considerando as dimensões citadas acima [@instrumentossus2002 p 10]. A versão 2022 - 2025 do PMS foi o primeiro instrumento de planejamento setorial do MSP a vincular suas metas aos ODS [@Palmierei2022 p 85].
+\newpage
+O PMS, bem como os Planos de Saúde da Federação, Estados ou Municípios, é  um instrumento de gestão do Sistema Único de Saúde Brasileiro (SUS). Segundo bases epidemiológicas e sociodemográficas, tem a função de direcionar os planejamentos e aportes financeiros para as ações em saúde do município. Para a sua realização conta com participação de usuários, gestores e profissionais de saúde que devem atualizá-lo a cada quatro anos [@instrumentossus2002 p 10]. A versão 2022 - 2025 do PMS sinaliza 30 ações relacionadas à saúde ambiental ou ao PAVS e foi o primeiro instrumento de planejamento setorial do MSP a vincular suas metas aos ODS [@Palmierei2022 p 85].
 
 O PLAMEP é um dos desdobramentos do PMS. No documento norteador para sua elaboração encontramos a definição que o resume como:
 
@@ -165,15 +178,17 @@ diferentes territórios e regiões do Município. Deve ser um processo de criaç
 
 \endgroup
 
+No MSP este planejamento é regionalizado. Na CRS Leste, uma das 06 regiões da SMS, são realizadas oficinas nas 07 Supervisões Técnicas de Saúde (STS) que a compõe para construí-lo segundo as necessidades locais expressas pelos técnicos das STS e CRS, Unidades de Vigilância em Saúde (UVIS), Conselho Gestores locais e Organizações Sociais de Saúde parceiras (OSS) atuantes nesta CRS. No consolidado das ações de educação permanente para o período de 2022-2025, apresentado no início de 2022, estão previstos 18 temas relacionados à saúde ambiental ou PAVS ^[O PLAMEP é monitorado enquanto meta contratual e deve ser revisto anualmente, podendo ser ajustado segundo as necessidades epidemiológicas, sociodemográficas sinalizadas em nível central ou local. @Plamep].
+
 \newpage
-Das diretrizes ou programa citados acima, apenas o PMS já tem estabelecida as relações entre sua metas e os ODS, ainda que de maneira preliminar. O objetivo das ferramentas aqui apresentadas, *Relatório PAVS - ODS* e *Painel Interativo Saúde Ambiental - ODS Santa Marcelina*, é auxiliar os Gestores técnicos do PAVS, Agentes de Promoção Ambiental e outros profissionais das UBS que incorporam o PAVS como uma de suas estratégia de prevenção de doenças e promoção da Saúde a visualizarem de maneira mais prática as possíveis associações entre as atividades realizadas no âmbito desse Programa e as metas e indicadores dos ODS da Agenda 2030 municipal @Andrade2020. Com isso torna-se possível incorporar, sempre que a equipe inicie um novo projeto ou ação, atividades que colaborem para o alcance dessas metas, utilizando os indicadores sugeridos como refêrencia, ou ainda adaptando estes segundo a realidade local dos territórios em que atuam e com os usuários com quem interagem.
+Das diretrizes ou programa citados, apenas o PMS já tem estabelecida as relações entre sua metas e os ODS, ainda que de maneira preliminar. O objetivo das ferramentas aqui apresentadas, *Relatório PAVS - ODS* e *Painel Interativo Saúde Ambiental - ODS Santa Marcelina*, é auxiliar os Gestores técnicos do PAVS, Agentes de Promoção Ambiental e outros profissionais das UBS que incorporam o PAVS como uma de suas estratégia de prevenção de doenças e promoção da Saúde a visualizarem de maneira mais prática as possíveis associações entre as atividades realizadas no âmbito desse Programa e as metas e indicadores dos ODS da Agenda 2030 municipal @Andrade2020. Com isso torna-se possível incorporar, sempre que a equipe inicie um novo projeto ou ação, atividades que colaborem para o alcance dessas metas, utilizando os indicadores sugeridos como refêrencia, ou ainda adaptando estes segundo a realidade local dos territórios em que atuam e com os usuários com quem interagem.
 
 Como PAVS e os ODS são os termos chave  para o presente relatório, antes de  seguir no esforço de estabelecer relações entre eles, vale antes apresentá-los brevemente. O PAVS é o programa da SMS de São Paulo, sob a Coordenação da Atenção Básica,  que tem por objetivo:
 
 \begingroup
 \fontsize{10}{10}\setstretch{1.0}\setlength{\leftskip}{4cm}
 
- *"[...] contribuir na construção das políticas públicas integradas no Município de São Paulo, através de uma agenda de ações integradas com enfoque para o desenvolvimento de políticas de saúde ambiental no âmbito da Estratégia Saúde da Família, visando fomentar o desenvolvimento de uma nova prática de saúde que se traduz em valores de responsabilidade cidadã em torno da defesa da vida e da proteção ambiental, tendo como eixos norteadores o fortalecimento da atuação intersecretarial e intersetorial, a sustentabilidade das intervenções no território e o empoderamento e efetiva participação da comunidade."@portariaPAVS*
+*"[...] contribuir na construção das políticas públicas integradas no Município de São Paulo, através de uma agenda de ações integradas com enfoque para o desenvolvimento de políticas de saúde ambiental no âmbito da Estratégia Saúde da Família, visando fomentar o desenvolvimento de uma nova prática de saúde que se traduz em valores de responsabilidade cidadã em torno da defesa da vida e da proteção ambiental, tendo como eixos norteadores o fortalecimento da atuação intersecretarial e intersetorial, a sustentabilidade das intervenções no território e o empoderamento e efetiva participação da comunidade."@portariaPAVS*
 
 \endgroup
 
@@ -185,35 +200,43 @@ Cabe ressaltar que o presente relatório não tem a intenção de ser um manual,
 
 À seguir, na parte 02 deste documento, serão apresentados as correlações entre os ODS, metas e respectivos indicadores da Agenda 2030 municipal e `r params$acoes`. Na terceira parte poderão ser vistas as doenças e agravos e sugestões de enfrentamento relacionadas à essas ações.
 
+Para ver as correlações das outras ações PAVS, acesse o *Painel Interativo Saúde Ambiental - ODS Santa Marcelina* em https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/atencao_basica/pavs/index.php?p=215712] e escolha a ação desejada. Navegue entre as páginas para ver as planilhas e gráficos interativos ou clique no botão "DOWNLOAD" para baixar um outro relatório com as informações personalizadas. 
+
 \newpage
-### 02. ODS possivelmente associados com `r params$acoes`
+## 02. ODS possivelmente associados com `r params$acoes`
 
 Os ODS estruturados pela ONU foram elaborados para que os esforços dos governos e sociedades fossem mensuráveis e possivel de ser monitorados para avaliar o quanto, enquanto sociedade, estamos progredindo para a redução das iniquidades sociais e redução dos impactos ambientais. O setor saúde, como uma das atividades humanas, também é passivel de contribuiur neste sentido. A Organização Mundial da Saúde (OMS) avalia que o Objetivo "03 SAÚDE E BEM ESTAR" é o  está mais diretamente relacionado ao setor, no entanto, não somente. Segundo a organização, dada a sua complexidade, todos os outros ODS têm com o setor alguma relação.[@Corvalan2016 p 94-100] Neste sentido e utilizando a matriz proposta pela OMS, a equipe do setor Saúde e Meio Ambiente do Santa Marcelina Saúde ^[A equipe do setor Saúde e Meio Ambiente Santa Marcelina que participou dessa construção é composta por: Almir, dos S. A.; André L. T. U. F.; Carla C. C.; Danilo R. P.; Gabriel R. S. F.; Gisele B. C.; Marlene R. N.; Jefferson dos S. R.; Marcelo C. M.; Paulo R. P. P.; Paulo J. B. V.; Raphael H. M.; Samantha C. H.; Samara S. M.], se reuniu em oficinas para avaliar quais Objetivos, Metas e Indicadores estabelecidos pela Comissão ODS do MSP @Andrade2020 poderiam estar relacionados às ações realizadas pelas equipes das UBS no âmbito do PAVS. 
 
-Observando como intervenção `r params$acoes`, foram relacionados dessa maneira `r soma_acoes` indicadores selecionados, distribuidos entre os ODS: `r escreve_lista`. Esta distribuição pode ser visualizada no gráfico abaixo, onde pode-se verificar que o ODS `r maior_ods` é o que mais sinaliza indicadores relacionados ao `r params$acoes`:
+Observando como intervenção `r params$acoes`, foram relacionados dessa maneira `r soma_acoes` indicadores selecionados, distribuidos entre os ODS: `r knitr::combine_words(escreve_lista, and = " e ", oxford_comma = FALSE)`. Esta distribuição pode ser visualizada no gráfico abaixo, onde se verifica que o ODS `r maior_ods` é o que mais sinaliza indicadores relacionados ao `r params$acoes`:
 
 \newpage
 Gráfico 01: Associações `r params$acoes` e ODS
 
-```{r grafico ods-pavs, fig.width = 7, fig.height = 3, warning=FALSE, echo=FALSE}
+```{r grafico ods-pavs, fig.width = 8, fig.height = 4, warning=FALSE, echo=FALSE}
 bd_pavs %>% 
   group_by(`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`, `ODS - NOME`) %>% 
   count() %>% 
   arrange(desc(n)) %>% 
-  ggplot(aes(area = n, fill = `ODS - NOME`, label = `ODS - NOME`)) +
-  geom_treemap() +
-    scale_fill_manual(values = cores_ods,
+   mutate(x = hsize) %>% 
+  ggplot(aes(x = hsize, y = n, fill = `ODS - NOME`)) +
+  geom_col() +
+  #geom_text(aes(label = value),
+   #         position = position_stack(vjust = 0.5)) +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = cores_ods,
                     limits = force) +
   labs(title = stringr::str_wrap(params$acoes, 50),
-       subtitle = "ODS relacionadas",
+       subtitle = "ODS relacionados",
        caption = "Fonte: Agenda 2030 municipal") +
-   scale_x_discrete(limits = c("ODS - NOME", "SITUAÇÕES"),
-                   expand = c(0.15, 0.05)) +
-  theme_void() +
-  theme(
-    plot.title = element_text(hjust = 0.5, size = 10),    # Center title position and size
-    plot.subtitle = element_text(hjust = 0.5, size = 9),            # Center subtitle
-    plot.caption = element_text(hjust = 0, size = 8, face = "italic"),# move caption to the left
+  xlim(c(0.2, hsize + 0.5)) +
+  theme(panel.background = element_rect(fill = "white"),
+        panel.grid = element_blank(),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 10),    # Center title position and size
+        plot.subtitle = element_text(hjust = 0.5, size = 9),            # Center subtitle
+        plot.caption = element_text(hjust = 0, size = 8, face = "italic")# move caption to the left
   )
 ```
 
@@ -222,10 +245,9 @@ A tabela a seguir apresenta os ODS, suas metas municipais e os respectivos indic
 
 \newpage
 \blandscape
-
 Tabela 01: ODS, metas municipais e indicadores potencialmente associadas a `r params$acoes`
 
-```{r tabela indicadores, echo=FALSE }
+```{r tabela indicadores, echo=FALSE, fig.align="center" }
 bd_pavs %>% 
   mutate( ODS = case_when(
     `ODS - NOME` == "01 ERRADICAÇÃO DA POBREZA" ~ "![](ods_01.png){#id .class width=11% height=11%}", 
@@ -251,15 +273,14 @@ bd_pavs %>%
     INDICADOR = INDICADOR, 
     REFERENCIA = REFERENCIA.y) %>% 
   arrange(ODS) %>% 
-  pander::pander(split.table = Inf, 
-    style = "rmarkdown",
-    justify = c("center","left","left","left"),
-    caption = attr(bd_pavs, "Fonte xxx"))
+  pander::pander(split.cells = c(02, 42, 23, 13),
+                 split.table = Inf, 
+                 justify = c("center","left","left","left"))
 ```
 
 \elandscape
 \newpage
-### 03. Riscos ambientais e ações do PAVS para seu enfrentamento 
+## 03. Riscos ambientais e ações do PAVS para seu enfrentamento 
 A OMS estima que cerca de 1/4 de todas as mortes ocorridas anualmente no mundo estão relacionadas aos riscos ambientais. Para auxiliar os profissionais da área a identificar e planejar ações para a redução dessas mortes, bem como a redução de anos de vida perdidos por incapacidade em decorrência destes riscos, publicou em 2016 a revisão atualizada do Relatório *"Preventing Disease through healthly environments"*. Nele foram listadas 133 doenças ou agravos que, segundo evidências, tem relação direta com riscos ambientais, variando percentualmente segundo sua fração atribuíve^[A Fração Atribuível Populacional é a redução proporcional de mortes ou doenças que ocorreria se a exposição ao risco fosse removida ou reduzida[@Corvalan2016 p 06]]. Essas doenças ou agravos estão categorizadas em 4 grupos: "Agravos", "Condições neonatais e nutricionais", "Doenças ou Agravos não transmissíveis (DANT)" e "Doenças infecciosas e parasitárias".[@Corvalan2016 p 14-84]
 
 O PAVS pressupõe a realização de ações de promoção de saúde e/ou prevenção de agravos e doenças conduzidas pelas equipes das UBS com usuários e parceiros nos territórios, sob a perspectiva da redução da exposição humana aos riscos ambientais e/ou a promoção de ambientes saudáveis. Para organizar de maneira didática as possíveis linhas de intervenção, os formuladores do programa instituiram eixos temáticos que as agrupassem. São 07 os eixos temáticos PAVS: "Agenda Ambiental na Administração Pública (A3P)", "Água, Ar e Solo", "Biodiversidade e Arborização", "Cultura e Comunicação", "Gerenciamento de Resíduos Sólidos", "Horta e Alimentação Saudável" e "Revitalização de Espaços Públicos".
@@ -270,7 +291,6 @@ podem parecer difusos. O próprio conceito de saúde ambiental é um terreno em 
 \newpage
 \begingroup
 \fontsize{10}{10}\setstretch{1.0}\setlength{\leftskip}{4cm}
-
 *"...  Saúde Ambiental são todos aqueles aspectos da saúde humana, incluindo a qualidade de vida, que estão determinados por fatores físicos, químicos, biológicos, sociais e psicológicos no meio ambiente. Também se refere à teoria e prática de prevenir ou controlar tais fatores de risco que, potencialmente, possam prejudicar a saúde de gerações atuais e futuras (OMS, 1993)." @funasa *
 
 \endgroup
@@ -297,18 +317,18 @@ Avaliando os eixos PAVS, as intervenção das equipes das UBS para o PAVS nos ú
 * Projetos e ações socioambientais de promoção a:
    * alimentação saudável
    * ambientes verdes e saudáveis
-* Projetos e ações socioambientais de compostagem de sobra de alimentos in natura
-* Projetos de promoção de saúde coletiva em espaços públicos
-* Projetos e ações visando atender aos objetivos da Agenda Ambiental na Administração Pública (A3P)
-* Projetos e ações que reduzam os riscos dos resíduos de serviço de saúde
-* Mais saúde, menos plástico
+   * Projetos e ações socioambientais de compostagem de sobra de alimentos in natura
+   * Projetos de promoção de saúde coletiva em espaços públicos
+   * Projetos e ações visando atender aos objetivos da Agenda Ambiental na Administração Pública (A3P)
+   * Projetos e ações que reduzam os riscos dos resíduos de serviço de saúde
+   * Mais saúde, menos plástico
 
-Cada tipo de intervenção está mais associada a determinado eixo PAVS, mas a depender da situação, em especial se o projeto/ação for direcionado a determinada faixa etária/linha de cuidado, pode-se, em um segundo momento, definir melhor qual o eixo específico está sendo trabalhado de acordo com os riscos e potencialidades do território. No caso de `r params$acoes`, a/as relações possiveis são como abaixo:  
+Cada tipo de intervenção está mais associada a determinado eixo PAVS, mas a depender da situação, em especial se o projeto/ação for direcionado a determinada faixa etária/linha de cuidado, pode-se, em um segundo momento, definir melhor qual o eixo específico está sendo trabalhado de acordo com os riscos e potencialidades do território. No caso de `r params$acoes`, a/as relações estabelecidas com os Eixos temáticos PAVS são como abaixo:  
 
-```{r pavs-acoes, fig.width = 7, fig.height = 3, warning=FALSE, echo=FALSE}
+```{r plot pavs-acoes, fig.width = 7, fig.height = 3, warning=FALSE, echo=FALSE}
 bd_acoes_agravos %>% 
   filter(`Projetos/Ações` == params$acoes) %>% 
-   group_by(`Eixos PAVS`) %>% 
+  group_by(`Eixos PAVS`) %>% 
   count() %>% 
   arrange(desc(n)) %>% 
   ggplot(aes(area = n, fill = `Eixos PAVS`, label = `Eixos PAVS`)) +
@@ -327,9 +347,10 @@ bd_acoes_agravos %>%
 
 ```
 
-É claro que sempre se deve considerar as complexidades do processo saúde-doença para planejar as ações de saúde. No entanto,  reconhecendo com maior clareza os tipos de intervenção possívelmente relacionadas aos aspectos e riscos ambientais no âmbito dos Eixos PAVS, pode-se também agrupar os agravos e doenças que poderiam ser enfrentadas com essas tecnologias. 
-Com este trabalho foi possivel então relacionar as intervenções, e depois agrupar segundo Eixos PAVS as sugestões de ações para entrentamento da OMS, em seu relatório.
-No que diz respeito aos `r params$acoes`, os gráfico e tabela à seguir sinalizam as doenças e agravos que devem ser observadas:
+\newpage
+É claro que sempre se deve considerar as complexidades do processo saúde-doença para planejar as ações de saúde, afinal hoje se sabe que o processo de adoecimento é multifatorial envolvendo dimensões individuais, sociais e ambientais (whitehead e dalgreen). No entanto,  reconhecendo com maior clareza os riscos, suas  frações atríbuíveis associadas e utilizando a experiência registrada em fontes verificáveis, pode-se planejar as ações, no caso as intervenções do PAVS, utilizando indicadores para avaliar os seus impactos tanto na promoção de saúde quanto na prevenção de agravos e doenças.
+depois agrupar segundo Eixos PAVS as sugestões de ações para enfrentamento da OMS, em seu relatório.
+No que diz respeito aos `r params$acoes`, o gráfico à seguir apresenta as doenças que devem ser observadas e suas respectivas frações atribuíveis:
 
 Gráfico 02: Doenças e agravos,  riscos ambientais associados e frações atribuíveis
 
@@ -373,9 +394,10 @@ bd_agravos %>%
   )
 ```
 
-As doenças e agravos visualizadas no gráfico anterior, estão também representadas na tabela abaixo, ordenada segundo a Fração atribuível aos riscos ambientais:
+\newpage
+Abaixo pode ser visualizada as informações plotadas no gráfico anterior, com a sinalização de que método a OMS utilizou para sistematizar a fração atribuível às doencas e agravos, organizada segundo esta variável:
 
-Tabela 02: Doencas e agravos, categorias e
+Tabela 02: Doencas e agravos organizadas segundo as frações atribuíveis relacionadas aos riscos ambientais
 
 ```{r tabela agravos, echo=FALSE, error=TRUE }
 bd_agravos %>%
@@ -386,36 +408,33 @@ bd_agravos %>%
     `Fração atribuível aos riscos ambientais - FAA` = paste0(`Risco ambiental` * 100, "%"),
     `Método para estabelecimento da FAA` = Metodo
   ) %>% 
-  pander::pander(split.table = Inf, 
-                 style = "rmarkdown",
-                 justify = c("left","left","center","left"),
-                 caption = "FONTE: WHO, 2016")
+  pander::pander(split.cells = c(15, 25, 20, 20),
+                 split.table = Inf, 
+                 justify = c("left","left","center","left")
+                 )
 ```
-
-
-
-Abaixo podemos verificar quais são os agravos relacionados aos
 
 \newpage
 \blandscape
+
+Além de apresentar as doenças e agravos sensíveis aos aspectos ambientais, a OMS, compilou também em seu relatório estratégias de intervenção exitosas para seu enfrentamento.
+São experiências realizadas em diferentes países. Tabela a seguir, pode-se observar, de maneira resumida.
+
 Tabela 03: Ações PAVS e/ou sugeridas pela OMS para o enfrentamento das doenças e agravos sensíveis aos riscos ambientais selecionados
 
 ```{r tabela acoes, echo=FALSE }
 bd_agravos %>% 
-      transmute(
-        `Agravos/Doenças` = `Doencas/ Agravos`,
-        `Eixos PAVS` = `EIXO PAVS`,
-        `Ações para enfrentamento sugeridas` = `Ações para enfrentamento sugeridas`) %>% 
-  pander::pander(split.table = Inf,
-                 split.cells = c(1,2,3,"30%","30%","40%"),
-                 style = "rmarkdown",
-                 justify = c("left","left","left"),
-                 
-                 caption = "FONTE: WHO, 2016")
+  transmute(
+    `Agravos/Doenças` = `Doencas/ Agravos`,
+    `Eixos PAVS` = `EIXO PAVS`,
+    `Ações para enfrentamento sugeridas` = `Ações para enfrentamento sugeridas`) %>% 
+  pander::pander(split.cells = c(15, 20, 45),
+                 split.table = Inf,
+                 justify = c("left","left","left")
+                 )
 
 ```
 
 \elandscape
 \newpage
-
-### 04. Referências
+## 04. Referências

@@ -36,6 +36,6 @@ Author: Stefan Milton Bache [aut, cph] (Original author and creator of
 Maintainer: Lionel Henry <lionel@rstudio.com>
 Repository: CRAN
 Date/Publication: 2022-03-30 07:30:09 UTC
-Built: R 4.2.0; x86_64-w64-mingw32; 2022-06-21 00:33:10 UTC; windows
+Built: R 4.2.1; x86_64-w64-mingw32; 2022-08-11 00:52:49 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64

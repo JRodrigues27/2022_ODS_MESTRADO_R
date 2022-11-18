@@ -53,6 +53,6 @@ Author: Kirill Müller [aut, cre],
 Maintainer: Kirill Müller <krlmlr+r@mailbox.org>
 Repository: CRAN
 Date/Publication: 2022-07-22 06:10:02 UTC
-Built: R 4.2.1; x86_64-w64-mingw32; 2022-10-09 02:38:41 UTC; windows
+Built: R 4.2.1; x86_64-w64-mingw32; 2022-08-11 03:06:24 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64
