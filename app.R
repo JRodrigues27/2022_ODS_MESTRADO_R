@@ -8,24 +8,40 @@ library(plotly)
 library(lubridate)
 library(DT)
 library(highcharter) #https://rpubs.com/techanswers88/sankey
+library(shinyalert)
 
 
 # 1. CRIACAO DOS OBJETOS BANCO DE DADOS ----
 
-#IMPORTA A ABA PAVS:
+#IMPORTA A ABA PAVS - 11 COLUNAS:
+#ODS - NUMERO,	ODS - NOME,	OBJETIVO - ONU,	OBJETIVO - OMS,
+#ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS.
+#Meta ODS Municipal - NUMERO,	Indicadores selecionado - NUMERO,
+#	INDICADOR	REFERENCIA,	ESTRATEGIA-ETAPA	OBSERVACAO
 bd.pavs <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                       sheet = "PAVS", col_types = c("text", 
                                                     "text", "text", "text", "text", "text", 
                                                     "text", "text", "text", "text", "text"))
 
-
-#IMPORTA A ABA PLANO_SAUDE_2022_25:
+#IMPORTA A ABA PLANO_SAUDE_2022_25 - 15 COLUNAS:
+#DIRETRIZ SAUDE - NUMERO, DIRETRIZ SAUDE, OBJETIVO SAUDE - NUMERO, 
+#ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS, META SAUDE - NUMERO, 
+#META SAUDE, INDICADOR, ODS - NUMERO, Meta ODS Municipal - NUMERO, 
+#Indicadores selecionado - NUMERO, ODS - NOME, OBJETIVO - ONU, 
+#OBJETIVO - OMS, REFERENCIA, OBSERVACAO
 bd.plano.saude <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                              sheet = "PLANO_SAUDE_2022_25", col_types = c("text", 
                                                                           "text", "text", "text", "text", "text", 
                                                                           "text", "text", "text", "text", 
                                                                           "text", "text", "text", "text", "text"))
-#IMPORTA A ABA PLAMEP:
+#IMPORTA A ABA PLAMEP - 25 COLUNAS:
+#Região/Serviço, MACROPRIORIDADES ATENÇÃO BÁSICA, ÁREA/EIXO, SUB-EIXO, 
+#SE SUB-EIXO OUTROS, ESPECIFIQUE:, PRIORIDADES LOCAIS (STS) DO PMS, 
+#SECRETARIAS/ÁREAS E DEMAIS SETORES ENVOLVIDOS (NO CASO DA AÇÃO SER TRANSVERSAL), 
+#PROPONENTE DA AÇÃO, TIPO DE PROPOSTA, SE TIPO DE PROPOSTA OUTROS, ESPECIFIQUE:, 
+#ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS, 
+#IDENTIFICAÇÃO DO PROBLEMA /ORIGEM DA DEMANDA PELA AÇÃO, MODALIDADE , 
+#RECURSO FINANCEIRO, CARGA HORÁRIA
 bd.plamep <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                         sheet = "PLAMEP", col_types = c("text", 
                                                         "text", "text", "text", "text", "text", 
@@ -34,24 +50,39 @@ bd.plamep <- read_excel("2022_MESTRADO_ODS_BD.xlsx",
                                                         "text", "text", "text", "text", 
                                                         "text", "text", "text", "text", "text"))
 
-#IMPORTA A ABA ODS_SAO_METAS:
+#IMPORTA A ABA ODS_SAO_METAS - 13 COLUNAS:
+#ODS - NUMERO, ODS - NOME, OBJETIVO - ONU, OBJETIVO - OMS, 
+#Meta ODS Global - NUMERO, Meta ODS Global - DESCRICAO, 
+#Meta ODS Municipal - NUMERO, Meta ODS Municipal - DESCRICAO, 
+#Indicadores selecionado - NUMERO, INDICADOR, Fórmula de cálculo, 
+#REFERENCIA, AÇÕES SUGERIDAS
 bd.metas <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                        sheet = "ODS_SAO_METAS", col_types = c("text", "text", "text","text",
                                                               "text", "text", "text", "text", "text", 
                                                               "text", "text", "text", "text"))
-#IMPORTA A ABA ODS_MUNIC_INDICE:
+
+#IMPORTA A ABA ODS_MUNIC_INDICE - 7 COLUNAS:
+#ODS - NUMERO, ODS - NOME, OBJETIVO - ONU, Meta ODS Global - NUMERO, 
+#Meta ODS Global - DESCRICAO, Meta ODS Municipal - NUMERO, 
+#Meta ODS Municipal - DESCRICAO
 bd.metas.ind <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                            sheet = "ODS_MUNIC_INDICE",
                            col_types = c("text","text", "text", "text", "text", 
                                          "text", "text"))
-#IMPORTA A ABA PAVS_ACOES:
+
+#IMPORTA A ABA PAVS_ACOES - 03 COLUNAS:
+#EIXO PAVS, ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS, 
+#Doencas/ Agravos
 bd.acoes <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                        sheet = "PAVS_ACOES", 
                        col_types = c("text", "text", "text")) %>% 
   cSplit("Doencas/ Agravos", ";", "long", type.convert= FALSE) %>% 
   drop_na(`Doencas/ Agravos`)
 
-#IMPORTA A ABA DOENCAS_AGRAVOS:
+#IMPORTA A ABA DOENCAS_AGRAVOS - 03 COLUNAS:
+#CATEGORIAS, Doencas/ Agravos, Risco ambiental, Metodo, 
+#Importância epidemiológica, Exposições associadas, 
+#Ações para enfrentamento sugeridas
 bd.agravos <- read_excel("2022_MESTRADO_ODS_BD.xlsx", 
                          sheet = "DOENCAS_AGRAVOS", 
                          col_types = c("text", "text", "numeric", "text", "text", "text", "text"))
@@ -61,8 +92,10 @@ bd.acoes.agravos <- merge(bd.acoes, bd.agravos, all = TRUE) %>%
   drop_na(`Risco ambiental`)
 
 
-bd.acoes.agravos2 <- bd.acoes.agravos %>% #para o grafico do relatorio
-  cSplit("EIXO PAVS", ", ", "long", type.convert= FALSE) %>%
+bd.acoes2 <- read_excel("2022_MESTRADO_ODS_BD.xlsx", #para o grafico do relatorio
+                                sheet = "PAVS_ACOES", 
+                                col_types = c("text", "text", "text")) %>% 
+    cSplit("EIXO PAVS", ", ", "long", type.convert= FALSE) %>%
   transmute(
     `Eixos PAVS` = `EIXO PAVS`,
     `Projetos/Ações` = `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)%>% 
@@ -208,6 +241,7 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
                     ), # fecha sidebar
                     
                     body = dashboardBody(
+                      useShinyalert(force = TRUE),
                       fluidPage( 
                         tabBox(
                           width = 12,
@@ -315,6 +349,33 @@ ui <- dashboardPage(title = "PAINEL SAUDE AMBIENTAL - ODS SANTA MARCELINA SAÚDE
 
 # 6. SERVER - Interface de operação ----
 server <- function(input, output) {
+  shinyalert(
+    title = "Saúde Ambiental - ODS",
+    text = "LADO ESQUERDO (selecione):
+    * Estratégias
+    * Tipos de ação
+    * Imprime Relatório PAVS - ODS
+    
+    CENTRO (navegue pelas páginas):
+    * ODS - Estratégias e ações 
+    * ODS - Objetivos e Indicadores
+    * PAVS - Ações e indicadores
+    
+    BARRA SUPERIOR:
+    Controle e outras informações",
+    size = "s", 
+    closeOnEsc = TRUE,
+    closeOnClickOutside = FALSE,
+    html = FALSE,
+    type = "success",
+    showConfirmButton = TRUE,
+    showCancelButton = FALSE,
+    confirmButtonText = "OK",
+    confirmButtonCol = "#AEDEF4",
+    timer = 0,
+    imageUrl = "lirio.png",
+    animation = TRUE
+  )
   
   indicadores_filtrados <- reactive({
     bd.ods.merge %>% filter(`ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS` %in% input$acoes) %>% 
@@ -702,7 +763,7 @@ server <- function(input, output) {
       params <- list(acoes = input$acoes,
                      bd_pavs = corr_pavs(),
                      bd_pavs_agravos = pavs_agravos(),
-                     bd_pavs_acoesagravos = bd.acoes.agravos2 
+                     bd_pavs_acoes = bd.acoes2
       )
       
       rmarkdown::render(
