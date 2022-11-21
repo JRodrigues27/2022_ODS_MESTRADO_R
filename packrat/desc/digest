@@ -30,6 +30,6 @@ NeedsCompilation: yes
 Packaged: 2022-10-17 13:37:40 UTC; edd
 Repository: CRAN
 Date/Publication: 2022-10-18 08:32:35 UTC
-Built: R 4.2.1; x86_64-w64-mingw32; 2022-10-25 16:06:59 UTC; windows
+Built: R 4.2.2; x86_64-w64-mingw32; 2022-11-03 01:42:11 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64

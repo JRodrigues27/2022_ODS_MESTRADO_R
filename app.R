@@ -92,15 +92,10 @@ bd.acoes.agravos <- merge(bd.acoes, bd.agravos, all = TRUE) %>%
   drop_na(`Risco ambiental`)
 
 
-<<<<<<< HEAD
 bd.acoes2 <- read_excel("2022_MESTRADO_ODS_BD.xlsx", #para o grafico do relatorio
                                 sheet = "PAVS_ACOES", 
                                 col_types = c("text", "text", "text")) %>% 
     cSplit("EIXO PAVS", ", ", "long", type.convert= FALSE) %>%
-=======
-bd.acoes.agravos2 <- bd.acoes.agravos %>% #para o grafico do relatorio
-  cSplit("EIXO PAVS", ", ", "long", type.convert= FALSE) %>%
->>>>>>> 946c69f55455e05b5b4bef40d5c4bdf61cccf7f1
   transmute(
     `Eixos PAVS` = `EIXO PAVS`,
     `Projetos/Ações` = `ACOES PARA CONTRIBUICAO NO ATENDIMENTO DAS METAS`)%>% 
@@ -359,7 +354,7 @@ server <- function(input, output) {
     text = "LADO ESQUERDO (selecione):
     * Estratégias
     * Tipos de ação
-    * Imprime Relatório PAVS - ODS
+    * Baixa o Relatório PAVS - ODS
     
     CENTRO (navegue pelas páginas):
     * ODS - Estratégias e ações 
