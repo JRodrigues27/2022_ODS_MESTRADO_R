@@ -56,6 +56,6 @@ Author: Ross Ihaka [aut],
 Maintainer: Achim Zeileis <Achim.Zeileis@R-project.org>
 Repository: CRAN
 Date/Publication: 2022-02-21 09:50:02 UTC
-Built: R 4.2.1; x86_64-w64-mingw32; 2022-08-11 00:54:44 UTC; windows
+Built: R 4.2.0; x86_64-w64-mingw32; 2022-06-21 00:36:06 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64

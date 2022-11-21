@@ -36,6 +36,6 @@ Author: Jim Hester [aut],
 Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
 Repository: CRAN
 Date/Publication: 2021-12-08 23:00:08 UTC
-Built: R 4.2.1; x86_64-w64-mingw32; 2022-08-11 00:53:19 UTC; windows
+Built: R 4.2.0; x86_64-w64-mingw32; 2022-06-21 00:33:34 UTC; windows
 ExperimentalWindowsRuntime: ucrt
 Archs: x64
